@@ -1,0 +1,44 @@
+<!--确认订单 开始-->
+<view class="make">
+    <view class="set">   
+        <view class="dl" style="background-color:#fff;">
+            <text class="tn">订单号：{{num}}</text>
+            <text class="td">{{status}}</text>
+        </view> 
+         <view class="dl on blue" wx:if="{{coupon}}">
+            <view class="dt">
+                <view class="chose">
+                    <image class="con" src="../img/shopcar_07.png"></image>
+                    <image class="con on" src="../img/yuyue_05.png"></image>
+                </view> 
+            </view>
+            <view class="dd">
+                <view class="inlineb">
+                    <text>优惠券(满{{coupon.condition}}元~减{{coupon.jian}}元),{{coupon.hasdate}}</text>
+                </view>
+            </view>
+        </view>    
+        <view class="dl on">
+            <view class="dt">还需支付</view>
+            <view class="dd"><view class="inline">¥<text>{{price}}</text></view></view>
+        </view>
+        <view class="h3">选择支付方式</view>
+         <view class="dl on">
+            <view class="dt">
+                <image class="wcon" src="../img/paycon_03.png"></image>
+                <text>微信支付</text>    
+            </view>
+            <view class="dd">
+                <view class="chose">
+                    <image class="con" src="../img/shopcar_07.png"></image>
+                    <image class="con on" src="../img/yuyue_05.png"></image>
+                </view>	
+            </view>
+        </view>
+    </view>
+</view>
+<!-- <button class="cancle" bindtap="backHome">返回首页</button> -->
+<block wx:if="{{way}}">
+<view class="sure" bindtap="confirm">确认支付</view>
+</block>
+<!--确认订单 结束-->

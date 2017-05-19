@@ -1,0 +1,24 @@
+/*搜索*/
+.findn{ width: 100%; z-index: 33; background-color: #fff;}
+.findn .find{padding:30rpx 20rpx; background-color: #f5f5f5; box-sizing: border-box; }
+.findn .fa{ display: block; width: 100%; height: 72rpx; line-height: 72rpx; font-size: 30rpx; color: #555; padding: 0 92rpx 0 20rpx; position: relative; background-color: #fff; border-radius:36rpx;}
+.findn .fa input{ display: block; height: 72rpx; border: none; font-size: 28rpx; line-height: 72rpx; color: #555;}
+.findn .fa .findv{ display: block; width: 72rpx; height: 72rpx; position: absolute; right: 16rpx; top: 0; padding: 14rpx; box-sizing: border-box; background-color: transparent;}
+.findn .fa image{ display: block; width: 40rpx; height: 40rpx; }
+.findn .fa button::after{ border: none;}
+
+.near{ padding:0rpx 20rpx 20rpx 20rpx; background-color: #f5f5f5;}
+.near .tit{ overflow: hidden; font-size: 32rpx; color: #444; line-height:40rpx; padding: 10rpx 0 28rpx 10rpx; }
+.near .tit image{ display: block; width:36rpx; height: 36rpx; float: left; margin-right: 10rpx; }
+.near .tit text{ display:block; float: left; }
+.near .tips{ overflow: hidden; box-sizing: border-box;}
+.near .tips view{ display: block; float: left; border: 2rpx solid #dedede; line-height: 50rpx; border-radius: 28rpx; padding: 0 30rpx; margin: 0 10rpx 18rpx 0rpx; font-size: 24rpx; color: #666;}
+
+.hot{ padding:0rpx 0rpx 20rpx 0rpx; background-color: #fff;}
+.hot .tit{ overflow: hidden; font-size: 32rpx; color: #444; line-height:40rpx; padding: 24rpx 20rpx 24rpx 20rpx; border-bottom: 2rpx solid #dedede; }
+.hot .tit text{ display:block; box-sizing: border-box; padding-left: 20rpx; border-left: 6rpx solid #ff6698; }
+.hot .tips{ overflow: hidden; box-sizing: border-box;}
+.hot .tips view{ display: block; border-bottom: 2rpx solid #eee; line-height: 72rpx; padding: 0 46rpx; font-size: 26rpx; color: #666;}
+
+
+/*搜索*/

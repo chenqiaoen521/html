@@ -1,0 +1,39 @@
+<block wx:for="{{coupon}}">
+<view class="coupon {{item.is_past=='1'?'disable':''}}"  wx:if="{{item.is_use != -1}}"  data-id="{{item.id}}" data-quan="{{item.jian}}">
+	<view class="left">
+		<view class="up">
+			¥<text class="price">{{item.jian}}</text>
+			<view wx:if="{{item.condition != undefined}}" class="price-desc">满{{item.condition}}元使用</view>
+		</view>
+		<view class="down">{{item.hasdate}}</view>
+	</view>
+	<view class="right">
+		<view class="up">
+			<view class="name">优惠券({{item.type}})</view>
+			<view class="desc">商城在线支付专享</view>
+		</view>
+		<view class="down">有效期至：{{item.end_time}}</view>
+		<view class="invalid" wx:if="{{item.is_past=='1'}}">已失效</view>
+	</view>
+</view>
+</block>
+
+
+<!-- <view class="coupon disable">
+	<view class="left">
+		<view class="up">
+			¥<text class="price">300</text>
+			<view class="price-desc">满2000元使用</view>
+		</view>
+		<view class="down">还有8天过期</view>
+	</view>
+	<view class="right">
+		<view class="up">
+			<view class="name">现金抵用优惠券</view>
+			<view class="desc">商城在线支付专享</view>
+		</view>
+		<view class="down">有效期至：2016年4月1号</view>
+		<view class="invalid">已失效</view>
+	</view>
+</view> -->
+

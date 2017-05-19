@@ -1,0 +1,14 @@
+.item {height: 92rpx;line-height: 92rpx;border-bottom:1rpx solid #e5e5e5;}
+.item .icon{width: 40rpx;height:40rpx;float:left;margin:26rpx;}
+.item .ding{margin-top:12px;}
+.item .local{width: 18px;}
+.item .jiantou{display: block;width: 14rpx;height: 28rpx; float: right;margin-top: 32rpx;}
+.item .title{font-size: 15px;color: #1a1a1a;vertical-align: bottom;}
+.item .right{float: right;font-size: 15px;color: #818181;height: 41px;}
+.address{padding:10px 16rpx;background: #fff;border: 1px solid #e5e5e5;margin-top: 30rpx; border-radius: 6rpx;}
+.address .up{font-size: 15px; color: #323232;}
+.address .right{float: right;font-size: 13px; color: #323232;vertical-align: bottom;}
+.address .right .del{width: 16px; height: 16px;vertical-align: bottom;margin-left:50rpx;}
+.address .down {width: 100%;display: -ms-flexbox;display: flex;padding-left: 15px;}
+.address .down .cont{-ms-flex:1;flex:1; font-size: 12px;line-height: 20px;width:80%;overflow: hidden;text-overflow:ellipsis; vertical-align: top; color: #999999;margin-right: 10px; }
+.address .down .back {-ms-flex: 0 0 7px;flex: 0 0 7px; width:7px;height:13px;vertical-align: top;position: relative; top: 15px;right: 5px;}

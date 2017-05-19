@@ -1,0 +1,89 @@
+<!--无商品-->
+<view class="body" wx:if="{{liebiao.stock_yes.length==0&&liebiao.stock_no.length==0}}">
+	<image src="../img/cart.png"></image>
+	<view class="text">空空如也~</view>
+	<view class="jump" bindtap="jumpback">去逛逛</view>
+</view>
+<!--无商品-->
+
+<!--有商品-->
+<view class="shopcar" wx:if="{{liebiao.stock_yes.length>0}}">
+	<block wx:for="{{liebiao.stock_yes}}">
+	<view class="sg" data-goodsid='{{item.goods_id}}'>
+		<view class="chose" bindtap="sgchose" data-index='{{index}}'>
+			<image class="con on" src="../img/shopcar_07.png"></image>
+			<image class="con" src="../img/yuyue_05.png"></image>
+			<checkbox checked="{{item.check || allchose }}" />
+		</view>	
+		<view class="tuwen">
+			<view bindtap="goxq" data-id="{{item.goods_id}}" class="vimg">
+				<image mode=" widthFix" src="{{HOST}}{{item.thumb}}"></image>
+			</view>		
+			<view class="do">
+				<view bindtap="goxq" data-id="{{item.goods_id}}" class="tn">{{item.name}}</view>
+				<image class="del" src="../img/shopcar_03.png" bindtap='delshop' data-index='{{index}}' data-shanid="{{item.id}}"></image>
+			</view>
+			<view bindtap="goxq" data-id="{{item.goods_id}}" class="td">规格：{{item.attr_values}}</view>
+			<view class="suan">
+				<view class="num">
+					<image class="jia" bindtap="jian" data-index="{{index}}" data-shopid="{{item.goods_id}}" data-carid="{{item.id}}" src="../img/shopxq_23.png"></image>
+					<input type="text" value="{{item.num}}" />
+					<image class="jian" bindtap="jia" data-index="{{index}}" data-shopid="{{item.goods_id}}" data-carid="{{item.id}}" src="../img/shopxq_25.png"></image>
+				</view>
+				<text>¥{{item.price}}</text>
+			</view>
+		</view>
+	</view>
+	</block>
+</view>
+<view class="outime" wx:if="{{liebiao.stock_no.length>0}}">
+	<view class="ot">失效商品</view>
+	<view class="shopcar">
+		<block wx:for="{{liebiao.stock_no}}">
+		<view class="sg" data-goodsid='{{item.goods_id}}'>
+			<!-- <view class="chose" bindtap="sgchose" data-index='{{index}}'>
+				<image class="con on" src="../img/shopcar_07.png"></image>
+				<image class="con" src="../img/yuyue_05.png"></image>
+				<checkbox disabled />
+			</view>	 -->
+			<view class="tuwen">
+				<view data-id="{{item.goods_id}}" class="vimg">
+					<image mode=" widthFix" src="{{HOST}}{{item.thumb}}"></image>
+				</view>		
+				<view class="do">
+					<view data-id="{{item.goods_id}}" class="tn">{{item.name}}</view>
+					<image class="del" src="../img/shopcar_03.png"></image>
+				</view>
+				<view data-id="{{item.goods_id}}" class="td">规格：{{item.attr_values}}</view>
+				<view class="suan">
+					<view class="num">
+						<image class="jia" bindtap="jian" data-index="{{index}}" src="../img/shopxq_23.png"></image>
+						<input type="text" value="{{item.num}}" />
+						<image class="jian" bindtap="jia" data-index="{{index}}" src="../img/shopxq_25.png"></image>
+					</view>
+					<text>¥{{item.price}}</text>
+				</view>
+			</view>
+		</view>
+		</block>
+	</view>
+	<view class="clear" bindtap="clearOut">清空失效宝贝</view>
+</view>
+
+<!--商品操作栏-->
+<view class="gu">
+	<view class="all" bindtap='allchoses'>
+		<image class="con on" src="../img/shopcar_07.png"></image>
+		<image class="con" src="../img/yuyue_05.png"></image>
+		<checkbox checked="{{allchose}}" />
+		<text>全选</text>
+	</view>
+	<view class="mon">
+		<view class="sum">合计：<view class="inline">¥{{heji}}</view></view>
+		<text>(不含运费)</text>
+	</view>
+	<view bindtap='godan' class="an">去结算({{ge}})</view>
+</view>
+<!--有商品-->
+
+

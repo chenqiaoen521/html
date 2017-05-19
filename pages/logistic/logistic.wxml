@@ -1,0 +1,24 @@
+<view class="wl">
+	<view class="left">
+		<view class="box"><image class="img" src="{{HOST}}{{imgurl}}"></image><view class="goods">{{count}}件商品</view></view>
+	</view>
+	<view class="right">
+		<view class="zt">物流状态 <text class="green">已签收</text></view>
+		<view class="qt">承运公司：{{message.name}}</view>
+		<view class="qt">运单编号：{{message.LogisticCode}}</view>
+		<view class="qt">官方电话：<text class="blue">{{message.phone}}</text></view>
+	</view>
+</view>
+
+<view class="follow">
+	<view class="title">物流跟踪</view>
+	<view class="infos">
+		<view class="info" wx:for="{{message.Traces}}">
+			<view class="box">
+				<view class="icon"></view>
+				<view class="text">{{item.AcceptStation}}</view>
+				<view class="date">{{item.AcceptTime}}</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,22 @@
+<view class="item" bindtap="toData">
+    <image class="icon" src="../img/center_14.png"></image>
+    <text class="title">个人资料</text>
+    <view class="right"><image class="icon jiantou" src="../img/center_13.png"></image></view>
+</view>
+
+<!-- <view class="address" wx:for="{{infos}}">
+	<view class="up">
+		{{item.name}}
+		<view class="right" >  
+			<image class="del"  src="../img/center_17.png" data-id="{{item.id}}"  bindtap='del'></image>
+		</view>
+	</view>
+	<view class="down">
+		<view class="cont">年龄 ：{{item.age}}周岁</view>
+		<view class="cont">性别 ：{{item.sex == 1 ? '男':'女'}}</view>
+	</view>
+	<view class="down">
+		<view class="cont">身高 ：{{item.height}}cm</view>
+		<view class="cont">体重 ：{{item.weight}}KG</view>
+	</view>
+</view> -->

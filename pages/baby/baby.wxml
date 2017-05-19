@@ -1,0 +1,47 @@
+<form bindsubmit="submit" >
+<view class="baby">
+	<input type="text" name="name"/>
+	<view class="right">
+		宝宝名
+		<image class="" src="../img/center_13.png"></image>
+	</view>
+</view>
+<view class="baby">
+	 <radio-group class="sexgroup" name="sex">
+    <label class="radio" >
+      <radio checked="{{userInfo.sex === 2 }}"  value="0"/>女
+    </label>
+    <label class="radio"  >
+      <radio checked="{{userInfo.sex === 1}}" value="1"/>男
+    </label>
+  </radio-group>
+	<view class="right">
+		性别
+		<image class="" src="../img/center_13.png"></image>
+	</view>
+</view>
+<view class="baby">
+	<input type="number" name="height"/>
+	<view class="right">
+		身高(cm)
+		<image class="" src="../img/center_13.png"></image>
+	</view>
+</view>
+<view class="baby">
+	<input type="number" name="age"/>
+	<view class="right">
+		周岁
+		<image class="" src="../img/center_13.png"></image>
+	</view>
+</view>
+<view class="baby">
+	<input type="number" name="weight"/>
+	<view class="right">
+		体重KG
+		<image class="" src="../img/center_13.png"></image>
+	</view>
+</view>
+<button class="complete" formType="submit">
+	完成
+</button>
+</form>

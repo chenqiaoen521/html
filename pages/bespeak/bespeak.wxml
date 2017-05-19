@@ -1,0 +1,138 @@
+
+<form bindsubmit="submit"> 
+
+<!--预约游泳 开始-->
+<view class="bespeak">
+    <view class="dl">
+        <view class="dt">宝宝姓名</view>
+        <view class="dd"><input type="text" name="name" placeholder="请输入宝宝姓名" /></view>
+        <image class="jt" src="../img/xiaoxi_03.png"></image>
+    </view>
+    <!-- <view class="dl">
+        <view class="dt">宝宝年龄</view>
+        <view class="dd"><input type="text" name="age" placeholder="请输入宝宝年龄" /></view>
+        <image class="jt" src="../img/xiaoxi_03.png"></image>
+    </view> -->
+    <!-- <view class="dl">
+        <view class="dt">宝宝性别</view>
+        <view class="dd">
+        <radio-group bindchange="radioChange" name="sex">
+            <label class="radio" >
+                <radio value="0" checked="{{userInfo.sex === 1 }}"/>女
+            </label>
+            <label class="radio"  >
+                <radio value="1" checked="{{userInfo.sex === 0}}"/>男
+        </label>
+        </radio-group>
+        </view>
+        <image class="jt" src="../img/xiaoxi_03.png"></image>
+    </view> --> 
+    <view class="dl">
+        <view class="dt">家长联系方式</view>
+        <view class="dd"><input type="number" name="phone" placeholder="请输入家长联系方式" /></view>
+        <image class="jt" src="../img/xiaoxi_03.png"></image>
+    </view>
+    <view class="dl" >
+        <view class="dt">所在区域</view>
+        <view class="dd" style="height:72rpx; text-align:right;color: #888; font-size: 28rpx;" bindtap="showFlag">
+            {{provinces.REGION_NAME}}{{citys.REGION_NAME}}{{areas.REGION_NAME}}
+            <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <view class="picker">{{array[index]}}</view>
+            </picker> -->
+            <input placeholder="选择" value="{{province}}-{{city}}-{{county}}" focus="{{focus}}" bindfocus="open" />
+                <view wx:if="{{condition}}" class="citypicker">
+                <picker-view indicator-style="height: 60rpx;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+                    <view class="cityheader">
+                    <view bindtap="open" class="city-cancel">取消</view>
+                    <view bindtap="open" class="city-true">确定</view>
+                    </view>
+                    <picker-view-column>
+                    <view class="cheng" wx:for="{{provinces}}" wx:key="item">{{item}}</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                    <view class="cheng" wx:for="{{citys}}" wx:key="item">{{item}}</view>
+                    </picker-view-column>
+                    <picker-view-column>
+                    <view class="cheng" wx:for="{{countys}}" wx:key="item">{{item}}</view>
+                    </picker-view-column>
+                </picker-view>
+            </view> 
+        </view>
+        <image class="jt" src="../img/xiaoxi_03.png"></image>
+    </view>
+    <view class="dl">
+        <view class="dt">门店选择</view>
+        <view class="dd" style="height:72rpx;">
+            
+            <picker mode="selector" bindchange="changeshop"  value="{{index}}" range="{{mendian}}" range-key="name" >
+               <view class="picker" >{{mendian[mendianindex].name}}</view>
+            </picker>
+            
+        </view>
+        <image class="jt" src="../img/xiaoxi_03.png"></image>
+    </view>
+    <view class="dl">
+        <view class="dt">日期</view>
+        <view class="dd">
+            <picker mode="date" value="{{date}}"  bindchange="bindDateChange">
+                <view class="picker">{{date}}</view>
+            </picker>
+        </view>
+        <image class="jt" src="../img/xiaoxi_03.png"></image>
+    </view>
+    <view class="dl">
+        <view class="dt">时间段</view>
+        <view class="dd" style="height:72rpx;"><view class="zan" 
+        wx:if="{{mTime == null || mTime == '' || mTime == undefined || mTime == 'undefined'}}">暂无时间段</view></view>
+        <image class="jt" src="../img/xiaoxi_03.png"></image>
+    </view>
+   <!-- <view class="timest" wx-if="{{mTime}}">
+        <radio-group class="radio-group"  name="time">
+            <block wx:for="{{mTime}}">
+            <view class="sg">
+                <radio class="con on" value="{{item.id}}" />{{item.value}}  
+                <view class="time">{{item.start_time}}~{{item.end_time}}</view>
+                <view class="yu">可预约总人数<view class="inline">{{item.num}}</view>人，剩余<view class="inline">{{item.surplus}}</view>人预约</view>
+            </view>
+            </block>
+        </radio-group>
+    </view>
+     <view class="dl on">
+        <view class="dt">留言备注</view>
+        <view class="dd"><textarea bindblur="bindTextAreaBlur" name="remark" auto-height/></view>
+    </view> -->
+   
+
+     <view class="rd-time clearfix" wx-if="{{mTime}}">
+        <radio-group class="radio-group"  name="time">
+        <block wx:for="{{mTime}}">
+            <view class="ct">
+                <label for="{{item.id}}" bindtap="tip" data-total="{{item.num}}"  data-surplus="{{item.surplus}}"><radio id="{{item.id}}"  value="{{item.id}}" disabled="{{item.surplus == 0 ? true : false}}"/>
+                {{item.start_time}}~{{item.end_time}}</label>
+            </view>
+        </block>
+        </radio-group>
+    </view> 
+</view>
+
+<button class="sure" formType="submit" >确认预约</button>
+
+
+<view class="mask {{flag ? 'none':'display'}}">
+    <view class="do"><view class="cancle" bindtap="closew">取消</view><view class="surea" bindtap="closew">确定</view></view>
+    <picker-view class="pickers"  indicator-style="height: 60rpx; line-height:60rpx; font-size:28rpx;" style="width: 100%; height: 200px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{province}}" class="picker-view" data-id="{{item.REGION_ID}}">{{item.REGION_NAME}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{city}}" class="picker-view"  data-id="{{item.REGION_ID}}">{{item.REGION_NAME}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{area}}" class="picker-view" data-id="{{item.REGION_ID}} " >{{item.REGION_NAME}}</view>
+      </picker-view-column>
+  </picker-view>
+</view>
+<!--预约游泳 结束-->
+
+</form>
+

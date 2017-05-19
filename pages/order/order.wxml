@@ -1,0 +1,117 @@
+<import src="template.wxml"/>
+<view class="tab-bar">
+	<view class="tab {{type === 0? 'on':''}}" bindtap="checkOrder" id="0">全部</view>
+	<view class="tab {{type === -1? 'on':''}}" bindtap="checkOrder" id="-1">待付款</view>
+	<view class="tab {{type === 1? 'on':''}}" bindtap="checkOrder" id="1">未发货</view>
+	<view class="tab {{type === 2? 'on':''}}" bindtap="checkOrder" id="2">已发货</view>
+	<!-- <view class="tab">待评价</view> -->
+</view>
+<form bindsubmit="searchSubmit">
+	<view class="search">
+		<view class="input">
+			<image src="../img/indexcon_03.png"></image><input name="name" placeholder="输入订单号"></input>
+		</view>
+		<button class="btn" formType="submit">搜索</button>
+	</view>
+</form>
+
+
+<!-- <view class="type" bindtap="toOrder">
+	<text class="number">订单号：GXK25486201</text>
+	<text class="status">交易成功</text>
+</view>
+
+<view class="goods">
+	<view class="img">
+		<image src="../img/center_19.png"></image>
+	</view>
+	<view class="content">
+		<view class="name">贝亲宽口径玻璃奶瓶160ml(黄色）新老包装交替</view>
+		<view class="scale">规格：500g/袋</view>
+		<view class="rating">评价</view>
+		<view class="flag">
+			<view class="price">¥90</view>
+			<view class="count">x1</view>
+		</view>
+	</view>
+</view>
+<view class="goods">
+	<view class="img">
+		<image src="../img/center_19.png"></image>
+	</view>
+	<view class="content">
+		<view class="name">贝亲宽口径玻璃奶瓶160ml(黄色）新老包装交替</view>
+		<view class="scale">规格：500g/袋</view>
+		<view class="rating">评价</view>
+		<view class="flag">
+			<view class="price">¥90</view>
+			<view class="count">x1</view>
+		</view>
+	</view>
+</view>
+<view class="goods">
+	<view class="img">
+		<image src="../img/center_19.png"></image>
+	</view>
+	<view class="content">
+		<view class="name">贝亲宽口径玻璃奶瓶160ml(黄色）新老包装交替</view>
+		<view class="scale">规格：500g/袋</view>
+		<view class="rating">评价</view>
+		<view class="flag">
+			<view class="price">¥90</view>
+			<view class="count">x1</view>
+		</view>
+	</view>
+</view>
+
+<template is="total" data="{{count:1,price:90}}"/>
+
+<view class="btns">
+	<template is="success" data="{{text:'付款'}}"/>
+	<template is="default" data="{{text:'取消订单'}}"/>
+	<template is="grey" data="{{text:'取消订单'}}"/>
+</view> -->
+
+<block wx:if="{{order_list.length>0}}">
+<block wx:for="{{order_list}}" wx:for-item="order">
+	<view class="type" bindtap="toOrder" data-oi-id="{{order.oi_id}}">
+		<text class="number">订单号：{{order.order_num}}</text>
+		<text class="status">{{order.order_name}}</text>
+	</view>
+		<view class="goods" wx:for="{{order.items}}" wx:for-item="item">
+			<view class="img" bindtap="todetail" data-id="{{item.goods_id}}">
+				<image src="{{HOST}}{{item.goods_thumb}}"></image>
+			</view>
+			<view class="content">
+				<view class="name" bindtap="todetail" data-id="{{item.goods_id}}">{{item.goods_name}}</view>
+				<view class="scale">规格：{{item.goods_attr_values}}</view>
+				<view class="flag">
+					<view class="price">¥{{item.price}}</view>
+					<view class="count">x{{item.num}}</view>
+				</view>
+			</view>
+		</view>
+	<template is="total" data="{{count:order.count,price:order.pay_price}}"/>
+	<view class="btns">
+		<block wx:if="{{order.big_status === -1}}">
+			<template is="pay" data="{{text:'付款',oid:order.oi_id,order_num:order.order_num,pay_price:order.pay_price,big_status:order.big_status}}" />
+			<template is="default" data="{{text:'取消订单',id:order.oi_id,type:5}}"/>
+		</block>
+		<block wx:if="{{order.big_status === 2}}">
+			<template is="success" data="{{text:'确认收货',id:order.oi_id,type:3}}"/>
+			<template is="wuliu" data="{{text:'查看物流',id:order.oi_id,imgurl:order.items[0].goods_thumb,count:order.items.length}}"/>
+		</block>
+		<block wx:if="{{order.big_status !== 2 && order.big_status !== 3 && order.big_status !== 1}}">
+			<template is="grey" data="{{text:'删除订单',id:order.oi_id,type:-2}}"/>
+		</block>
+	</view>
+
+</block>
+
+<!-- <view class="moveup">上拉加载更多</view> -->
+</block>
+<block wx:else>
+<template is="no-order"/>
+</block>
+
+

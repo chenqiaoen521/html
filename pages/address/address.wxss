@@ -1,0 +1,14 @@
+page{width:100%;height:100%; background: #f4f4f4}
+.adscoll{position:absolute;width:100%; top:0; bottom:44px; }
+.address{padding:10px 14rpx 0 14rpx; background: #fff;border-bottom: 1px solid #e5e5e5;}
+.address .up{font-size: 15px; color: #323232;}
+.address .right{float: right;font-size: 13px; color: #323232;vertical-align: bottom;}
+.address .right .del{width: 16px; height: 16px;vertical-align: bottom;margin-left:50rpx;}
+.address .down {width: 100%;display: -ms-flexbox;display: flex;}
+.address .down .red {color:#f01115;}
+.address .down .cont{-ms-flex:1;flex:1;margin-bottom: 24rpx;  font-size: 12px;line-height: 20px;width:80%;overflow: hidden;text-overflow:ellipsis; vertical-align: top; color: #999999;margin-right: 10px;display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;overflow:hidden; }
+.address .down .back {-ms-flex: 0 0 7px;flex: 0 0 7px; width:7px;height:13px;vertical-align: top;position: relative; top: 10px;right: 5px;}
+
+.complete{position: absolute;left: 0;right: 0; bottom: 0; height: 44px;line-height: 44px; font-size: 16px;text-align: center; color: #fff;  background: #ff6698;}

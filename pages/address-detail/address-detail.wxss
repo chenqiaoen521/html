@@ -1,0 +1,31 @@
+page{width:100%;height:100%; background: #f4f4f4;}
+.address{position: relative; height: 92rpx;background: #fff;line-height:92rpx; border-bottom: 1px solid #e8e8e8;}
+.address .dd{float:left;margin-left: 20rpx;font-size:30rpx;font-weight:bold;}
+.address .left{height:92rpx;line-height: 92rpx; padding:0 55rpx 0 200rpx;}
+.address .left input{height:92rpx;line-height: 92rpx;color:#888;font-size:28rpx;text-align:right;}
+.address .left .input {font-size:15px;color:#323232;height:92rpx;line-height: 92rpx;color:#888;font-size:28rpx;text-align:right;}
+.address .title {height:92rpx;line-height: 92rpx;color:#888;font-size:28rpx;text-align:right;}
+.address .left .picker{line-height: 30px;font-size: 15px; color: #323232;}
+.address .desc{font-size: 12px;color: #888888; }
+.address .right{position: absolute; top:50%; right: 0; margin-top:-7px;  display: block;width: 7px;height: 13px;margin-right: 20rpx; }
+.default {height:92rpx;line-height: 92rpx;}
+.address.default .switch {float: right;line-height: 92rpx;font-size: 0;margin-right: 20rpx;}
+.complete{position: absolute;left: 0;right: 0; bottom: 0; height: 44px;line-height: 44px; font-size: 16px;text-align: center; color: #fff;  background: #ff6698;}
+.clearfix:after{clear: both;content: '';}
+/*.pickers{position: absolute;left: 0;right: 0;bottom:2272rpx;color: #fff;background:#fff ;z-index: 2;}
+.picker-view{text-align: center;line-height: 80rpx;color:#444; font-size: 28rpx; line-height: 80rpx;}
+.mask .do{ position: absolute;z-index: 3;bottom:0;  width: 100%; overflow: hidden; height: 72rpx; line-height: 72rpx; background-color: #f7f7f7; padding: 0 30rpx; font-size: 28rpx; color: #666;}
+.mask .do .cancle{ display: block; float: left;}
+.mask .do .surea{ display: block; float: right; color: #349dde;}
+
+.none{opacity: 0;}
+.display{opacity: 1;position: static; bottom: 72px;}*/
+
+.mask{position: fixed;left: 0;right: 0;bottom:1000px; padding-bottom:200px;color: #fff; z-index:-5; background:#fff ; box-shadow: 0 0 5px #eee;}
+.mask .do{ overflow: hidden; height: 72rpx; line-height: 72rpx; background-color: #f7f7f7; padding: 0 30rpx; font-size: 28rpx; color: #666;}
+.mask .do .cancle{ display: block; float: left;}
+.mask .do .surea{ display: block; float: right; color: #349dde;}
+.pickers{ position: absolute; left: 0; bottom: 0; width: 100%; height: 200px;}
+.picker-view{text-align: center;line-height: 34px !important; color: #444; font-size: 28rpx; height: 34px !important;}
+.none{ opacity: 0;}
+.display{opacity: 1; bottom:0; z-index: 35;/*position: static;*/}

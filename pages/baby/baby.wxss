@@ -1,0 +1,7 @@
+page{width:100%;height:100%; background: #f4f4f4}
+.baby{height: 50px;line-height: 50px; font-size:  14px; color: #494949;border-bottom: 1px solid #ebebeb;background: #fff;padding:0 20rpx;}
+.baby input { display: inline-block; height: 50px; width: 70%;margin-left: 30rpx; }
+.baby .sexgroup{width: 60%;display: inline-block;}
+.baby .right{float: right;color: #888888;font-size: 12px;}
+.baby .right image{width: 7px; height: 13px;margin-left: 15rpx;}
+.complete{position: absolute;left: 0;right: 0; bottom: 0; height: 44px;line-height: 44px; font-size: 16px;text-align: center; color: #fff;  background: #ff6698;}

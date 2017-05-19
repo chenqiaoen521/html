@@ -1,0 +1,13 @@
+<!--消息 开始-->
+<view class="mess">
+    
+    <navigator class="sg" url="../help-question/help-question?id={{article.id}}" wx:for="{{articles}}" wx:for-item="article">
+        <image class="con" src="../img/xiaoxi_07.png"></image>
+        <image class="jt" src="../img/xiaoxi_03.png"></image>            
+        <view class="name"><text>{{article.title}}</text><view class="time">{{article.created_at}}</view></view>
+        <text class="td">{{article.desc}}</text>
+    </navigator>
+
+</view>
+<!-- <view class="moveup">上拉加载更多</view> -->
+<!--消息 结束-->

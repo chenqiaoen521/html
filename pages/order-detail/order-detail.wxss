@@ -1,0 +1,16 @@
+page{width:100%;height:100%; background: #f4f4f4}
+.shop-state{height: 60px;background: #c5c5c5;line-height: 60px;color: #fff;text-align: center;}
+.shop-state .icon{width: 25px;height: 25px;vertical-align: middle;}
+.address{padding:12px 8px;display: flex;height: 80px; background: #fff;border-bottom: 1px solid #ebebeb;margin-bottom: 4px;}
+.address .left{flex: 0 0 12px;}
+.address .left .loca{width: 12px; height: 20px;margin-top: 18px;}
+
+.address .right{flex:1;padding:0 8px;}
+.address .right .phone{float:right; font-size:12px; }
+.address .right .up{color: #333333; font-size: 14px;}
+.address .right .down{color: #666666; font-size: 12px;}
+.tip {border-bottom: 1rpx solid #ebebeb;padding: 0 22rpx;}
+.tip .right{float: right;}
+.grep{font-size: 15px; color: #aeaeae;line-height: 44px;}
+.white{font-size: 13px; color: #333333;line-height: 41px;background: #fff;}
+@import '../order/order.wxss'

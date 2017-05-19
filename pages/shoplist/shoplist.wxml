@@ -1,0 +1,121 @@
+<!--商品分类 开始-->
+
+<!--搜索内容 开始-->
+<view class="findn">
+    <view class="find">
+        <navigator class="fa" url="../search/search">
+            <!--<input type="text" disabled placeholder="请输入您要搜索的内容" />-->
+            <text>请输入您要搜索的内容</text>
+            <image src="../img/shoplist_06.png"></image>
+        </navigator>
+    </view>
+    <view class="kids">
+        <view class="{{ statusCode==1 ? 'on': ' ' }} one bu" bindtap="maketurns" data-statusid='1'>
+            <view>
+                <text>综合</text>
+                <!-- <image class="{{zong==0 ? 'on': ' ' }}" src="../img/shoplist_13.png" mode=" widthFix"></image>
+                <image class="{{zong==1 ? 'on': ' ' }}" src="../img/shoplist_11.png" mode=" widthFix"></image>
+                <image class="{{zong==2 ? 'on': '' }}" src="../img/shoplist_16.png" mode=" widthFix"></image> -->
+            </view>
+        </view>
+        <view class="{{ statusCode==2 ? 'on': ' ' }} one bu" bindtap="maketurns" data-statusid='2'>
+            <view>
+                <text>销量</text>
+                <!-- <image class="{{salenum==0 ? 'on': ' ' }}" src="../img/shoplist_13.png" mode=" widthFix"></image>
+                <image class="{{salenum==1 ? 'on': ' ' }}" src="../img/shoplist_11.png" mode=" widthFix"></image>
+                <image class="{{salenum==2 ? 'on': ' ' }}" src="../img/shoplist_16.png" mode=" widthFix"></image> -->
+            </view>
+        </view>
+        <view class="{{ statusCode==4 || statusCode==5 ? 'on': ' ' }} one" bindtap="maketurns" data-statusid='4'>
+            <view>
+                <text>价格</text>
+                <image class="{{ statusCode!=4 && statusCode!=5 ? 'on': ' ' }}" src="../img/shoplist_13.png" mode=" widthFix"></image>
+                <image class="{{ statusCode==5 ? 'on': ' ' }}" src="../img/shoplist_11.png" mode=" widthFix"></image>
+                <image class="{{ statusCode==4 ? 'on': ' ' }}" src="../img/shoplist_16.png" mode=" widthFix"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<!--搜索内容 结束-->
+
+
+<!--条件筛选 开始-->
+<view class="shoplist">
+    <!--列表 开始-->
+    <view class="kinds" wx:if='{{kindlist.length>0}}'>
+        <view class="ksts">
+            <block wx:for='{{kindlist}}'>
+            <view class="sin" bindtap='goxq' data-shopid="{{item.id}}">
+                <view class="sg">
+                    <view class="simg"><image class="prolist" src="{{HOST}}{{item.thumb}}"></image></view>
+                    <view class="sname">{{item.name}}</view>
+                    <view class="sprice">
+                        <view class="smoney">¥ <view class="inline big">{{item.sell_price}}</view></view>
+                        <view class="snum">月销量：<view class="inline color">{{item.sell_num}}</view></view>
+                    </view>
+                </view>
+            </view>
+            </block>
+            <!-- <navigator class="sin" url="../details/details">
+                <view class="sg">
+                    <view class="simg"><image class="prolist" src="../img/indexjpg_35.jpg"></image></view>
+                    <view class="sname">文艺宽松套头毛衣女简约百搭长袖针织衫</view>
+                    <view class="sprice">
+                        <view class="smoney">¥ <view class="inline big">148</view></view>
+                        <view class="snum">月销量：<view class="inline color">1454</view></view>
+                    </view>
+                </view>
+            </navigator>-->
+        </view>
+    </view>
+    <!--列表 开始-->
+    <!-- <view wx:if='{{kindlist.length==0}}'>暂无数据</view> -->
+
+    <!--无商品-->
+    <view class="body" wx:if="{{kindlist.length==0}}">
+        <view class="text">暂无此类商品~</view>
+        <view class="jump" bindtap="jumpback">去逛逛</view>
+    </view>
+    <!--无商品-->
+
+</view>
+<!--条件筛选 结束-->
+
+
+<!--弹出分类 开始-->
+<view class="popbg"></view>
+<view class="popkind">
+    <view class="same">
+        <view class="group">
+            <text class="on">玻璃奶瓶</text><text>孕妇帽/产妇帽</text>
+            <text>大流量奶嘴</text><text>孕妇鞋/袜</text>
+            <text>可调速/果汁奶嘴</text><text>理光/RICOH</text>
+            <text>餐垫/吸盘</text><text>裙子</text>
+            <text>托腹裤/带</text><text>身体护理</text>
+        </view>
+        <!--<view class="group">
+            <text>罐装</text><text>瓶装</text>
+            <text>袋装</text><text>盒装</text>
+            <text>赠运险费</text><text>套装/RICOH</text>
+            <text>七天退换</text><text>正品保障</text>
+            <text>免运费</text><text>极速发货</text>
+        </view>
+        <view class="group">
+            <text>黑色</text><text>白色</text>
+            <text>卡其色</text><text>深蓝色</text>
+            <text>粉色</text><text>红色</text>
+            <text>紫色</text><text>青色</text>
+            <text>淡蓝色</text><text>灰色</text>
+        </view>-->
+    </view>
+    <view class="btn">
+        <view class="ann">重置</view>
+        <view class="ann sure">确认</view>
+    </view>
+</view>
+<!--弹出分类 结束-->
+
+
+
+
+<!--商品分类 结束-->

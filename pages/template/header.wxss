@@ -1,0 +1,3 @@
+.header {height: 40px;background: #ff6698;text-align: center;line-height: 40px;color:#fff;font-size: 15px;}
+.header .icon{width: 20px; height:20px; background: url('../img/icon.png') no-repeat;background-size:100%;}
+.header .back{background-position-y:-360px;float: left;margin:10px;}

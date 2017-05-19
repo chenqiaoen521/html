@@ -1,0 +1,74 @@
+<form bindsubmit="formSubmit">
+<view class="person-data">
+   <text>头像</text> 
+   <view class="right">
+   	<image class="touxiang" src="{{userInfo.headimgurl}}"></image>
+   </view>
+</view>
+
+<view class="person-data">
+   昵称
+   <view class="right">
+   <!-- <text bindtap="changename">{{userInfo.name}}</text>
+     <image src="../img/center_13.png"></image> -->
+     <input class="grzl" name="name" type="text" placeholder="昵称"  value="{{userInfo.name}}"/>
+   </view>
+</view>
+
+<view class="person-data">
+   家长电话 
+   <view class="right">
+   <!-- <text>{{userInfo.phone}}</text>
+     <image src="../img/center_13.png"></image> -->
+    <input class="grzl" name="phone" type="number" placeholder="家长电话"  value="{{userInfo.phone}}"/>
+   </view>
+</view>
+<view class="person-data">
+   宝宝姓名
+   <view class="right">
+   <!-- <text>{{userInfo.phone}}</text>
+     <image src="../img/center_13.png"></image> -->
+    <input class="grzl" name="baby_name" type="text" placeholder="宝宝姓名"  value="{{userInfo.baby_name}}"/>
+   </view>
+</view>
+<view class="person-data">
+   宝宝性别
+
+ <radio-group name="sex" style="float:right;">
+    <label class="radio" >
+      <radio checked="{{userInfo.sex === 2 }}"  value="2"/>女
+    </label>
+    <label class="radio">
+      <radio checked="{{userInfo.sex === 1}}" value="1"/>男
+    </label>
+  </radio-group>
+   	<!-- <image src="../img/center_13.png"></image> -->
+
+</view>
+<view class="person-data">
+   <text>出生日期</text> 
+   <view class="right">
+   <picker mode="date" value="{{date}}" start="2010-04-21" end="2022-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        {{date}}<block wx:if="{{!date}}">请填写日期</block>
+      </view>
+  </picker>
+   </view>
+</view>
+<view class="person-data">
+   <text>邀请码</text> 
+   <view class="right">
+   <!-- <text>{{userInfo.phone}}</text>
+     <image src="../img/center_13.png"></image> -->
+    <input class="grzl" name="store_code" type="text"  placeholder="请填写"  disabled="{{!userInfo.store_code?false:true}}"  value="{{userInfo.store_code}}"/>
+   </view>
+</view>
+<!-- <view class="add" bindtap="add">
+  <image src="../img/center_16.png"></image>宝宝资料添加
+</view> -->
+
+<button formType="submit" class="complete" bindtap="submit">
+	完成
+</button>
+</form>
+

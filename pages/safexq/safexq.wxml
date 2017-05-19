@@ -1,0 +1,27 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+
+<!--保险 详情-->
+<view class="safexq">
+    <block>
+    <image src="{{HOST}}{{word.image}}" mode="widthFix"></image>
+    <view class="tail">
+        <view class="sg">
+            <view class="tn">{{word.title}}</view>
+            <view class="td">
+               {{word.description}}
+               <template is="wxParse"  data="{{wxParseData:article.nodes}}" />
+            </view>
+        </view>
+        <!--<view class="sg">
+            <view class="tn">
+                <text>身故保险金</text>
+                <text>返还已交保险</text>
+            </view>
+            <view class="td">
+                被保险人在本附加合同成立或合同效力最后恢复之日起二年内自杀，但被保险人自杀时为无民事行为能力人的除外；
+            </view>
+        </view>-->
+    </view>
+    </block>
+</view>
+<!--保险 详情-->

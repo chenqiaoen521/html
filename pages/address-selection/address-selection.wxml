@@ -1,0 +1,12 @@
+<picker-view class="pickers" indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{province}}"  class="picker-view">{{item}}省</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{city}}"  class="picker-view">{{item}}市</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{area}}"  class="picker-view">{{item}}区</view>
+      </picker-view-column>
+  </picker-view>
+ 

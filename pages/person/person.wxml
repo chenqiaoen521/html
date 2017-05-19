@@ -1,0 +1,123 @@
+<view class="center">
+    <view class="wrapper">
+        <image src="{{userInfo.avatarUrl}}" bindtap="toSetting"></image>
+        <view class="middle">
+            <text class="name" bindtap="toSetting">{{userInfo.nickName }}</text>
+            <view class="member" bindtap="toSetting">会员号:{{member}}</view>
+        </view>
+        <view class="right">
+            <view class="box" bindtap="toSetting">
+            	<image  class="icon setting" src="../img/center_07.png"></image>
+            	<view class="text">设置</view>
+            </view>
+            <view class="box" bindtap="toMess">
+            	<image  class="icon setting" src="../img/center_08.png"></image>
+            	<view class="text">消息</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="item">
+    <image class="icon ding" src="../img/center_01.png"></image>
+    <text class="title">我的订单</text>
+    <view class="right" bindtap="checkOrder" data-id="0">查看全部订单 <image class="icon jiantou" src="../img/center_13.png"></image> </view>
+</view>
+<view class="state">
+    <view class="state-item" bindtap="checkOrder" data-id="-1">
+        <image class="state-icon" src="../img/center_05.png"></image><view wx:if="{{no_pay>0}}" class="count">{{no_pay}}</view>
+        <view class="text">待付款</view>
+    </view>
+    <view class="state-item" bindtap="checkOrder" data-id="1">
+        <image class="state-icon" src="../img/center_04.png"></image><view wx:if="{{fahuo>0}}" class="count">{{fahuo}}</view>
+        <view class="text">待发货</view>
+    </view>
+    <view class="state-item" bindtap="checkOrder" data-id="2">
+        <image class="state-icon " src="../img/center_02.png"></image><view wx:if="{{shouhuo>0}}" class="count">{{shouhuo}}</view>
+        <view class="text">待收货</view>
+    </view>
+<!--     <view class="state-item">
+    <image class="state-icon " src="../img/center_06.png"></image>
+    <view class="text">待评价</view>
+</view> -->
+</view>
+
+<navigator url="../order-swim/order-swim" class="item">
+    <image class="icon xing" src="../img/icon-swim.png"></image>
+    <text class="title">预约游泳账单</text>
+    <view class="right" bindtap="toHelp"><image class="icon jiantou" src="../img/center_13.png"></image></view>
+</navigator>
+<navigator url="../collection/collection" class="item">
+    <image class="icon xing" src="../img/center_09.png"></image>
+    <text class="title">我的收藏</text>
+    <view class="right" bindtap="toFav"><image class="icon jiantou" src="../img/center_13.png"></image></view>
+</navigator>
+
+<navigator url="../coupon/coupon" class="item">
+    <image class="icon xing" src="../img/center_092.png"></image>
+    <text class="title">我的优惠券</text>
+    <view class="right"><image class="icon jiantou" src="../img/center_13.png"></image></view>
+</navigator>
+
+<navigator url="../address/address" class="item" style="margin-bottom:8px;">
+    <image class="icon local" src="../img/center_10.png"></image>
+    <text class="title">收货地址</text>
+    <view class="right" bindtap="toAddress"><image class="icon jiantou" src="../img/center_13.png"></image></view>
+</navigator>
+
+<navigator url="../help/help" class="item">
+    <image class="icon xing" src="../img/center_11.png"></image>
+    <text class="title">帮助中心</text>
+    <view class="right" bindtap="toHelp"><image class="icon jiantou" src="../img/center_13.png"></image></view>
+</navigator>
+
+<view url="../address/address" class="item">
+    <image class="icon xing" src="../img/center_12.png"></image>
+    <text class="title">客服热线</text>
+    <view class="right" bindtap="callPhone" style="font-style:italic;color: #ff5b70;"><block wx:if="{{tel}}">{{tel}}</block><image class="icon jiantou"  src="../img/center_13.png"></image></view>
+</view>
+
+<!--
+
+<view class="wxapp-modal" style="{{modal_style}}">
+     <view class="content">
+        <view class="section">
+  <input placeholder="这是一个可以自动聚焦的input" auto-focus/>
+</view>
+<view class="section">
+  <input placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" />
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">使得输入框获取焦点</button>
+  </view>
+</view>
+<view class="section">
+  <input  maxlength="10" placeholder="最大输入长度10" />
+</view>
+<view class="section">
+  <view class="section__title">你输入的是：{{inputValue}}</view>
+  <input  bindinput="bindKeyInput" placeholder="输入同步到view中"/>
+</view>
+<view class="section">
+  <input  bindinput="bindReplaceInput" placeholder="连续的两个1会变成2" />
+</view>
+<view class="section">
+  <input  bindinput="bindHideKeyboard" placeholder="输入123自动收起键盘" />
+</view>
+<view class="section">
+  <input password type="number" />
+</view>
+<view class="section">
+  <input password type="text" />
+</view>
+<view class="section">
+  <input type="digit" placeholder="带小数点的数字键盘"/>
+</view>
+<view class="section">
+  <input type="idcard" placeholder="身份证输入键盘" />
+</view>
+<view class="section">
+  <input placeholder-style="color:red" placeholder="占位符字体是红色的" />
+</view>
+     </view>
+    <view class="mask" bindtap="closeModal"></view>
+   </view>
+   -->

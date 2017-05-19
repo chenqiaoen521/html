@@ -1,0 +1,8 @@
+<block wx:for="{{infos}}" wx:for-item="info">
+<view class="question" bindtap="toDetail" data-id="{{info.id}}">
+	<view class="txt">{{info.title}}</view>
+	<view class="right">
+		<image src="../img/center_13.png"></image>
+	</view>
+</view>
+</block>

@@ -1,0 +1,77 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/address/address",
+    "pages/swimpay/swimpay",
+    "pages/order-swim/order-swim",
+    "pages/person-data/person-data",
+    "pages/paydan/paydan",
+    "pages/person-setting/person-setting",
+    "pages/address-detail/address-detail", 
+    "pages/makedan/makedan",
+    "pages/paydan-swim-ok/paydan-swim-ok",
+    "pages/person/person",
+    "pages/coupon-fetch/coupon-fetch",
+    "pages/bespeak/bespeak",
+    "pages/coupon/coupon",
+    "pages/baby/baby",
+    "pages/order/order",
+    "pages/cart/cart",
+    "pages/collection/collection",
+    "pages/help/help",
+    "pages/logistic/logistic",
+    "pages/mess/mess",
+    "pages/addresschose/addresschose",
+    "pages/category/category",
+    "pages/search/search",
+    "pages/address-selection/address-selection",
+    "pages/help-question/help-question",
+    "pages/person-data-submit/person-data-submit",
+    "pages/phone/phone",
+    "pages/order-detail/order-detail",
+    "pages/login/login",
+    "pages/details/details",
+    "pages/shoplist/shoplist",
+    "pages/paydanok/paydanok",
+    "pages/bespeaktime/bespeaktime",
+    "pages/messxq/messxq",
+    "pages/safexq/safexq",
+    "pages/safe/safe",
+    "pages/white/white",
+    "pages/logs/logs"  
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor":"#ff6698",
+    "navigationBarTextStyle":"white"
+  },
+   "tabBar": {
+      "color": "#333333",
+      "selectedColor": "#ff6698",
+      "borderStyle": "white",
+      
+      "backgroundColor": "#ffffff",
+      "list": [{
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/img/indexpng_89.png",
+        "selectedIconPath": "pages/img/indexpng_75.png",
+        "text": "首页"
+      }, {
+        "pagePath": "pages/category/category",
+        "iconPath": "pages/img/indexpng_90.png",
+        "selectedIconPath": "pages/img/indexpng_77.png",
+        "text": "分类"
+      }, {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "pages/img/indexpng_91.png",
+        "selectedIconPath": "pages/img/indexpng_80.png",
+        "text": "购物车"
+      }, {
+        "pagePath": "pages/person/person",
+        "iconPath": "pages/img/indexpng_92.png",
+        "selectedIconPath": "pages/img/indexpng_83.png",
+        "text": "个人中心"
+      }]
+  }
+}

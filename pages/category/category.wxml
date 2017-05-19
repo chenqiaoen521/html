@@ -1,0 +1,25 @@
+<view class="goods-list">
+<scroll-view class="menu" scroll-y>
+    <view class="{{num==index ? 'on':''}} item" wx:for="{{kind}}" data-alpha-beta="{{index}}"  bindtap="getlist">
+        {{item.category_name}}
+    </view>
+</scroll-view>
+
+<scroll-view class="goods" scroll-y>
+    <block wx:for="{{curkind}}">
+    <view class="commodity">
+        <view class="title">{{item.category_name}}</view>
+        <view class="items">
+            <block wx:for="{{item.child}}" wx:for-item="p" >
+                <view class="item" bindtap='golist' data-golistid="{{p.id}}">
+                    <view class="tu" wx-if="{{p.icon!=null}}"><image mode="widthFix" src="{{HOST}}{{p.icon}}"></image></view>
+                    <text>{{p.category_name}}</text>
+                </view>
+            </block>           
+        </view>   
+    </view>
+    </block>
+     
+    
+</scroll-view>
+</view>

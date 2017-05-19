@@ -1,0 +1,59 @@
+<import src="template.wxml"/>
+<form bindsubmit="formSubmit">
+<view class="address">
+	<view class="dd">姓名</view>
+	<view class="left">
+		<input name="name" placeholder="请输入姓名" placeholder-class="input"  value="{{name}}" />
+	</view>
+	<image class="right" src="../img/center_13.png"></image>
+</view>
+
+<view class="address clearfix">
+	<view class="dd">手机号</view>
+	<view class="left">
+		<input name="phone" type="idcard" placeholder="请输入手机号" placeholder-class="input"  value="{{phone}}" />
+	</view>
+	<image class="right" src="../img/center_13.png"></image>
+</view>
+
+<view class="address clearfix">
+	<view class="dd">地区</view>
+	<view class="left" bindtap="showFlag">
+		<view class="title">{{provinces.REGION_NAME}}{{citys.REGION_NAME}}{{areas.REGION_NAME}}</view>
+	</view>
+	<image class="right" src="../img/center_13.png"></image>
+</view>
+
+<view class="address clearfix">
+	<view class="dd">地址</view>
+	<view class="left">
+		<input name="address" placeholder-class="input" placeholder="请输入详细地址" value="{{address}}" />
+	</view>
+	<image class="right" src="../img/center_13.png"></image>
+</view>
+
+<view class="address clearfix default">
+	<view class="dd">设为默认地址</view>
+	<view class="switch"> 
+		<switch  name="status" type="checkbox" checked="{{status === 0 ? false:true}}"/>
+	</view>
+</view>
+<view class="mask {{flag ? 'none':'display'}}">
+	<view class="do" bindtap="showFlag"><view class="cancle" >取消</view><view class="surea">确定</view></view>
+    <picker-view class="pickers"   style="width: 100%; height: 200px;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{province}}" class="picker-view" data-id="{{item.REGION_ID}}">{{item.REGION_NAME}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{city}}" class="picker-view"  data-id="{{item.REGION_ID}}">{{item.REGION_NAME}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{area}}" class="picker-view" data-id="{{item.REGION_ID}} " >{{item.REGION_NAME}}</view>
+      </picker-view-column>
+  </picker-view>
+  </view>
+<button class="complete" formType="submit">
+	保存
+</button>
+
+</form>

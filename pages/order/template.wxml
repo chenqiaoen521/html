@@ -1,0 +1,48 @@
+<template name="no-order">
+	<view class="no-order">
+		<image src="../img/center_18.png"></image>
+		<view class="text">还没有订单呢</view>
+		<view class="gogo" bindtap="jumpback">去逛逛</view>
+	</view>
+</template>
+
+<template name="total">
+	<view class="total">
+		<view class="text">
+			共<text class="count">{{count}}</text>件商品  合计：<text class="price">¥{{price}}</text>
+		</view>
+	</view>
+</template>
+
+<template name="success">
+	<view class="success" bindtap="changeType" data-id="{{id}}" data-type="{{type}}">
+		{{text}}
+	</view>
+</template>
+
+
+<template name="default">
+	<view class="default" bindtap="changeType" data-id="{{id}}" data-type="{{type}}">
+		{{text}}
+	</view>
+</template>
+
+<template name="wuliu">
+	<view class="default" bindtap="wuliu" data-id="{{id}}" data-count="{{count}}" data-imgurl="{{imgurl}}" data-type="{{type}}" >
+		{{text}}
+	</view>
+</template>
+
+
+<template name="pay">
+	<view class="success" bindtap="toPay" data-num="{{order_num}}" data-oid="{{oid}}" data-price="{{pay_price}}" data-status="{{big_status}}" >
+		{{text}}
+	</view>
+</template>
+
+<template name="grey">
+	<view class="grey" bindtap="changeType" data-id="{{id}}" data-type="{{type}}">
+		{{text}}
+	</view>
+</template>
+

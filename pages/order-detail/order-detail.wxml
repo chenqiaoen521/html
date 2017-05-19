@@ -1,0 +1,97 @@
+<import src="../order/template.wxml"/>
+<view class="shop-state">
+<block wx:if="{{order.big_status === -1}}">
+	<image class="icon" src="../img/center_21.png"></image>
+</block>
+<block wx:elif="{{order.big_status === 1}}">
+	<image class="icon" src="../img/center_30.png"></image>
+</block>
+<block wx:elif="{{order.big_status === 2}}">
+	<image class="icon" src="../img/center_31.png"></image>
+</block>
+<block wx:elif="{{order.big_status === 4}}">
+	<image class="icon" src="../img/center_32.png"></image>
+</block>
+<block wx:else>
+	<image class="icon" src="../img/center_21.png"></image>
+</block>
+	{{order.order_name}}
+</view>
+<view class="address">
+	<view class="left">
+		<image class="loca" src="../img/center_20.png"></image>
+	</view>
+	<view class="right">
+		<view class="up">收货人: {{order.name}}<text class="phone">{{order.phone}}</text></view>
+		<view class="down">收货地址：{{order.province}}{{order.city}}{{order.area}}{{order.addr}}
+口建业五栋大楼</view>
+	</view>
+</view>
+
+
+<view class="type">
+	<text class="number">订单号：{{order.order_num}}</text>
+	<text class="status">{{order.order_name}}</text>
+</view>
+<!-- <view class="goods">
+	<view class="img">
+		<image src="../img/center_19.png"></image>
+	</view>
+	<view class="content">
+		<view class="name">贝亲宽口径玻璃奶瓶160ml(黄色）新老包装交替</view>
+		<view class="scale">规格：500g/袋</view>
+		<view class="rating">评价</view>
+		<view class="flag">
+			<view class="price">¥90</view>
+			<view class="count">x1</view>
+		</view>
+	</view>
+</view> -->
+<view class="goods" wx:for="{{order.items}}" wx:for-item="item">
+	<view class="img">
+		<image src="{{HOST}}{{item.goods_thumb}}"></image>
+	</view>
+	<view class="content">
+		<view class="name">{{item.goods_name}}</view>
+		<view class="scale">规格：{{item.goods_attr_values}}</view>
+		<!-- <view class="rating">评价</view> -->
+		<view class="flag">
+			<view class="price">¥{{item.price}}</view>
+			<view class="count">x{{item.num}}</view>
+		</view>
+	</view>
+</view>
+
+<template is="total" data="{{count:order.count,price:order.prices}}"/>
+
+
+<view class="tip grep">支付信息</view>
+<view class="tip white">订单金额<text class="right">¥{{order.prices}}</text></view>
+<view class="tip white" wx:if="{{order.jian}}">优惠金额<text class="right">¥{{order.jian}}</text></view>
+<view class="tip white">运费<text class="right">¥<block wx:if="{{big_postage}}">{{big_postage}}</block>
+<block wx:else>0</block>
+</text></view>
+<view class="tip white">应支付<text class="right">¥{{order.pay_price}}</text></view>
+<view class="tip white">备注<text class="right">{{order.remark}}</text></view>
+
+<view class="tip grep">订单信息<text class="right"></text></view>
+<view class="tip white">订单编号<text class="right">{{order.order_num}}</text></view>
+<view class="tip white">创建时间<text class="right">{{order.add_time}}</text></view>
+<view wx-if="{{order.pay_time != undefined}}"  class="tip white">付款时间<text class="right">{{order.pay_time}}</text></view>
+<view wx-if="{{order.fahuo_time != undefined}}" class="tip white">发货时间<text class="right">{{order.fahuo_time}}</text></view>
+<view wx-if="{{order.shou_time != undefined}}" class="tip white">收货时间<text class="right">{{order.shou_time}}</text></view>
+
+
+<view class="btns"  style="margin-bottom: 90rpx;">
+	<block wx:if="{{order.big_status === -1}}">
+		<template is="pay" data="{{text:'付款',oid:order.oi_id,order_num:order.order_num,pay_price:order.pay_price,big_status:order.big_status}}" />
+		<template is="default" data="{{text:'取消订单',id:order.oi_id,type:5}}"/>
+	</block>
+	<block wx:if="{{order.big_status === 2}}">
+		<template is="success" data="{{text:'确认收货',id:order.oi_id,type:3}}"/>
+		<template is="wuliu" data="{{text:'查看物流',id:order.oi_id,imgurl:order.items[0].goods_thumb,count:order.items.length}}"/>
+	</block>
+	<block wx:if="{{order.big_status !== 2 && order.big_status !== 3 && order.big_status !== 1}}">
+		<template is="grey" data="{{text:'删除订单',id:order.oi_id,type:-2}}"/>
+	</block>
+</view>

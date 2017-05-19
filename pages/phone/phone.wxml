@@ -1,0 +1,25 @@
+<view class="title">
+	通过你绑定的手机号找回密码
+</view>
+<view class="item">
+	<view class="left">手机号</view>
+	<view class="right">
+		<input class="input" placeholder="158****3201" />
+	</view>
+</view>
+<view class="item">
+	<view class="left">验证码</view>
+	<view class="right">
+		<input class="input" placeholder="请输入验证码" />
+		<view class="btn">获取验证码</view>
+	</view>
+</view>
+
+<view class="message">
+	<view class="we">我们已经发送了校验码到你的手机：</view>
+	<view class="phone">182*****210</view>
+</view>
+
+<view class="complete">
+	完成
+</view>

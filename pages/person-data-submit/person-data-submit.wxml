@@ -1,0 +1,9 @@
+<form bindsubmit="formSubmit">
+<view class="input">
+	<input class="grzl" name="askdjk" auto-focus value="啊实打实的撒的"/><icon type="cancel" class="icon" size="25" color="search" bindtap="cancel"/>
+</view>
+
+<button class="complete"  formType="submit">
+	完成
+</button>
+</form>

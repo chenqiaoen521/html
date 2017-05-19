@@ -1,0 +1,10 @@
+/*保险区*/
+page{ background-color: #f0f0f7;}
+.safe{ padding:16rpx 0 0 0;}
+.safe .sg{ display: block; position: relative; padding: 30rpx 20rpx 30rpx 320rpx; box-sizing: border-box; height: 225rpx; background-color: #fff; margin-bottom: 16rpx;}
+.safe .sg image{ display: block; position: absolute; left: 0; top: 0; width: 300rpx; height: 225rpx;}
+.safe .sg .txt{ display: block;}
+.safe .sg .txt .tn{ display: block; font-size: 32rpx; color: #111; height: 60rpx; line-height: 60rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.safe .sg .txt .td{ display: block; font-size: 26rpx; color: #666; line-height: 40rpx;}
+/*保险区*/
+

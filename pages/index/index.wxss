@@ -1,0 +1,73 @@
+
+
+/*图片广告*/
+.photo{ border-bottom:2rpx solid #eee;}
+.photo .all{ display: block; width: 100%;}
+.photo .all image{ display: block; width: 100%;}
+.photo .pic{ overflow: hidden;}
+.photo .pic .sa{ display: block; width: 50%; float: left;}
+.photo .pic .sa image{ display: block; width: 100%; border-left: 2rpx solid #eee;border-bottom:2rpx solid #eee;}
+.photo .pic .sa.bbn image{border-bottom:none;}
+.photo .pic .sa.big image{ border: none;}
+/*图片广告*/
+swiper{height:34px;}
+
+/**保证 开始**/
+.promise{ overflow-x: auto; overflow: hidden; height: 140rpx; padding: 30rpx 0; border-bottom: 16rpx solid #ededed;}
+.promise .pone{ display: inline-block; /*height: 100rpx;*/ padding: 20rpx 20rpx 20rpx 110rpx; background-position:20rpx center; background-repeat: no-repeat; background-size: 70rpx auto; border-right:2rpx solid #eee; position: relative;}
+.promise .pone .duan{ font-size: 30rpx; color: #333; line-height: 52rpx; overflow: hidden;}
+.promise .pone .miao{ font-size: 24rpx; color: #888; line-height: 40rpx;}
+.promise .pone image{ display: block; position: absolute; left: 20rpx; top: 50%; margin-top: -35rpx; width: 70rpx; height: 70rpx;}
+.promise .pone:last-child{ border:none; -webkit-box-sizing:border-box; box-sizing:border-box;}
+/**保证 结束**/
+
+/*分类列表*/
+.kinds .one{ border-bottom: 16rpx solid #ededed;}
+.ktit{ background-color: #fff; padding:10rpx 20rpx;font-size:36rpx; line-height: 72rpx; text-align:center;  border-bottom: 2rpx solid #eee; overflow: hidden;}
+.ktit .timu{  float: left; color: #222;}
+.ktit .timu .bgc{ background-color: #ff6698; font-weight: bold; color:#fff; height: 56rpx; padding: 0px 16rpx; border-radius: 30rpx; margin-right: 10rpx; }
+.ktit .more{ float: right; color: #888; font-size: 26rpx;}
+.ksts{ display:block; background-color: #FFFFFF; -webkit-box-orient:horizontal; -webkit-box-direction:normal; -ms-flex-direction:row; flex-direction:row;width:100%;-ms-flex-wrap:wrap;flex-wrap:wrap; overflow: hidden;}
+.ksts .sin{width:50%; display: block; float: left;}
+.ksts .sin .sg{ padding:14rpx; border-bottom: 2rpx solid #eee; border-right: 2rpx solid #eee; }
+.ksts .sin .simg{display:block;background-color: #eeeeee;width:100%; height: 0; position: relative; padding-bottom: 100%;}
+.ksts .sin .simg image{ display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; }
+.ksts .sin .sname{font-size:26rpx; margin:8rpx 10rpx; overflow: hidden;text-overflow: ellipsis; display: block; white-space: nowrap; line-height: 48rpx;}
+.ksts .sin .sprice{ margin:10rpx 10rpx; overflow: hidden;text-overflow: ellipsis; display: block; white-space: nowrap; text-align:left; font-size:24rpx; color: #3cc51f; height: 36rpx; line-height:36rpx;}
+.ksts .sin .sprice .smoney{ float: left; color: #ff6698; font-size:28rpx; }
+.ksts .sin .sprice .snum{ float: right; color: #888;}
+.ksts .sin .sprice .big{ font-size:36rpx;}
+.ksts .sin .sprice .color{ color: #ff6698;}
+.ksts .sin:nth-child(2n) .sg{ border-right: 2rpx solid #fff;}
+/*分类列表*/
+
+/*轮播图 开始*/
+.ban{ position: relative; width: 100%;}
+.ban .find{ position: absolute; left: 0; top: 10px; width: 100%; height: 72rpx; overflow: hidden; padding:0 120rpx 0 20rpx;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.ban .find .label{ overflow: hidden; background-color: #fff; height: 72rpx; border-radius: 36rpx; padding: 0 88rpx 0 14rpx; width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; position: relative; display: block; }
+.ban .find .label input{ display: block; width:100%; font-size: 26rpx; height:72rpx; text-indent:16rpx; line-height: 72rpx; color: #666;}
+.ban .find .label text{ display: block; width:100%; font-size: 26rpx; height: 72rpx; text-indent:16rpx; line-height: 72rpx; color: #666;}
+.ban .find .label .bimg{ display: block; position: absolute; right:14rpx; top:0; width: 72rpx; height: 72rpx;}
+.ban .find .label .bimg image{ margin: 16rpx auto; display: block;}
+.ban .find .mes{ display: block; height: 72rpx; line-height: 42rpx; font-size: 26rpx; color: #fff; text-align: center; padding-top: 36rpx; position: absolute; right: 20rpx; top: 0; width: 80rpx;} 
+.ban .find .mes image{ display: block; width: 38rpx; height: 38rpx; position: absolute; left: 50%; top: 0; margin-left: -19rpx;}
+.ban .find .mes .sm{ position: absolute;right:16rpx; top: 4rpx; width: 20rpx; height: 20rpx; border-radius: 50%; background-color: #f00;}
+/*轮播图 开始*/
+
+/*分类*/
+.kcome{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;width:100%; padding: 30rpx 20rpx 0 20rpx; display:-webkit-box; display:-ms-flexbox; display:flex; -ms-flex-wrap:wrap; flex-wrap:wrap;}
+.kcome .ksg{ width: 25%; display: block; margin-bottom: 30rpx;}
+.kcome .ksg .kimg image{display:block; width: 100rpx; height: 100rpx; margin: 0rpx auto;}
+.kcome .ktext{ text-align:center; margin:14rpx auto 0 auto;font-size:28rpx;}
+/*分类*/
+
+/*移动广告*/
+.movenews{ font-size: 26rpx; padding:12rpx 30rpx 12px 80rpx; position: relative; color: #555; height: 82rpx; line-height: 56rpx; border: 2rpx solid #eee; /* background-image: url('../img/gong.png');background-position: 26rpx center; background-repeat: no-repeat; background-size: 40rpx auto;*/}
+.movenews .ding{ display: block; width: 40rpx; position: absolute; height: 40rpx; left: 26rpx; top: 50%; margin-top: -20rpx;}
+.movenews .mnews{ padding-left: 30rpx; cursor: pointer; display: block;}
+/*移动广告*/
+
+/** 修改默认的navigator点击态 **/
+.navigator-hover { color:#ff6698; background-color: transparent; opacity: 1;}
+/** 自定义其他点击态样式类 **/
+.other-navigator-hover { color:#ff6698; background-color: transparent; opacity: 1;}

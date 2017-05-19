@@ -1,0 +1,118 @@
+<!--首页 banner 开始-->
+<view class="ban">
+    <swiper style="width:100%; height:{{imghight*0.55}}px" indicator-dots circular autoplay interval="4000" duration="1000">
+        <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{HOST}}{{item.image}}" class="slide-image"  bindtap="golink" data-way="{{item.id}}"  data-id="{{item.goods_id}}" style="width:100%;"/>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="find">
+        <navigator class="label" url="../search/search">
+            <!--<input placeholder="请输入您要搜索的内容" disabled />-->
+            <text>请输入您要搜索的内容</text>
+            <view class="bimg"><image style="width:40rpx; height:40rpx;" mode="aspectFit" src="../img/indexcon_03.png"></image></view>
+        </navigator>
+        <navigator class="mes" url="../mess/mess">
+            <!-- <image src="../img/indexcon_07.png"></image>消息<view class="inline sm"></view> -->
+            <image src="../img/indexcon_07.png"></image>消息
+        </navigator>
+    </view>
+</view>
+<!--首页 banner 结束-->
+
+<!--轮播广告 开始-->
+<view class="movenews">
+    <image class="ding" src="../img/gong.png"></image>
+    <swiper autoplay interval="3000" duration="800">
+        <block wx:for='{{movenew}}'>
+            <swiper-item style="mnews">
+                <view class="ktext" data-id='{{item.id}}' bindtap='gomnxq'>{{item.title}}</view>
+            </swiper-item>
+            
+        </block>
+    </swiper>
+</view>
+<!--轮播广告 结束-->
+
+<!--四个导航-->
+<view class="kcome">
+    <navigator class="ksg" url="../coupon-fetch/coupon-fetch">
+        <view class="kimg"><image mode="aspectFit" src="{{HOST}}{{firstButton.value}}"></image></view>
+        <view class="ktext">领优惠券</view>
+    </navigator>
+    <block wx:for="{{appkind}}">
+    <navigator class="ksg" url="../shoplist/shoplist?status=1&flag=1&category_id={{item.id}}" data-id="{{item.id}}">
+        <view class="kimg"><image mode="aspectFit" src="{{HOST}}{{item.icon}}"></image></view>
+        <view class="ktext">{{item.category_name}}</view>
+    </navigator>
+    </block>
+</view>
+<!--四个导航--> 
+
+<!--图片广告-->
+<view class="photo">
+    <navigator class="all" url="../bespeak/bespeak"><image mode="widthFix" src="{{HOST}}{{ads[0].image}}"></image></navigator>
+    <!--<view class="all" data-id="{{ads[0].goods_id}}" bindtap="golink"><image mode="widthFix" src="{{HOST}}{{ads[0].image}}"></image></view>
+    <view class="pic">
+        <view class="sa big" data-id="{{ads[1].goods_id}}" bindtap="golink"><image mode="widthFix" src="{{HOST}}{{ads[1].image}}" ></image></view>
+        <view class="sa" data-id="{{ads[2].goods_id}}" bindtap="golink"><image mode="widthFix" src="{{HOST}}{{ads[2].image}}"></image></view>
+        <view class="sa bbn" data-id="{{ads[3].goods_id}}" bindtap="golink"><image mode="widthFix" src="{{HOST}}{{ads[3].image}}"></image></view>
+    </view>-->
+</view>
+<!--图片广告-->
+
+
+<!--列表 开始-->
+<view class="kinds">
+    <!--<block wx:for="{{goodlist}}" wx:if="{{item.goods.length>0}}">-->
+    <view class="one">
+        <view class="ktit">
+            <!--<view class="timu"><view class="inline bgc">{{index+1}}F</view>{{item.name}}</view>-->
+            <view class="timu">热销商品</view>
+            <!--<view class="more" bindtap="tofl" data-key="{{item.name}}">更多>></view>-->
+        </view>
+        <view class="ksts">
+            <block wx:for="{{goodlist}}"  wx:for-item="j">
+            <view class="sin" data-alpha-beta="{{j.id}}" bindtap="goxq">
+                <view class="sg">
+                    <view class="simg"><image class="prolist" src="{{HOST}}{{j.thumb}}"></image></view>
+                    <view class="sname">{{j.goods_name}}</view>
+                    <view class="sprice">
+                        <view class="smoney">¥ <view class="inline big">{{j.sellprice}}</view></view>
+                        <view class="snum">月销量：<view class="inline color">{{j.sell_num}}</view></view>
+                    </view>
+                </view>
+            </view> 
+            </block>
+        </view>
+    </view>
+    <!--</block>-->
+</view>
+<!--列表 开始-->
+
+
+<!--保证 开始-->
+<scroll-view class="promise" scroll-x="true" style=" white-space: nowrap; display: flex" >
+    <view class="pone bg1">
+        <image src="../img/indexpng_60.png"></image>
+        <view class="duan">100%正品</view>
+        <view class="miao">所有产品保证正品</view>
+    </view>
+    <view class="pone bg3">
+        <image src="../img/indexpng_57.png"></image>
+        <view class="duan">全国联保</view>
+        <view class="miao">专业的售后服务就在家门口</view>
+    </view>
+    <!-- <view class="pone bg4">
+        <image src="../img/indexpng_67.png"></image>
+        <view class="duan">货到付款</view>
+        <view class="miao">支持刷卡和现金支付</view>
+    </view>
+    <view class="pone bg5">
+        <image src="../img/indexpng_64.png"></image>
+        <view class="duan">正规发票</view>
+        <view class="miao">机打发票，随箱附送</view>
+    </view> -->
+</scroll-view>
+<!--保证 结束-->

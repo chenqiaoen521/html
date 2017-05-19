@@ -1,0 +1,9 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+ <view class="article">
+	<view class="title">{{message.title}}</view>
+	<view class="desc">{{message.created_at}}</view>
+	<view class="content">
+		<template is="wxParse"  data="{{wxParseData:article.nodes}}" />
+	</view>
+</view> 
+

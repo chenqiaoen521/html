@@ -1,0 +1,17 @@
+/*确认订单 开始*/
+page{ background-color: #f0f1f5; padding-bottom: 92rpx;  }
+.payok{ padding: 8rpx 0;}
+.payok .tip{ padding: 80rpx 20rpx; background-color: #fff;}
+.payok .tip image{ display: block; width: 220rpx; height: 220rpx; margin: 0 auto 30rpx auto; }
+.payok .tip .h2{ display: block; font-size: 40rpx; color: #ff6698; text-align: center; line-height: 48rpx; }
+.payok .tip .h6{ display: block; font-size: 30rpx; color: #999; text-align: center; line-height: 46rpx; }
+.payok .btn{ padding: 50rpx 50rpx; text-align: center; overflow: hidden;}
+.payok .btn navigator{ display: block; border:2rpx solid #ff6698; color: #ff6698; width: 36%; margin: 0 7%; line-height: 66rpx; font-size: 30rpx; float: left; border-radius: 6rpx;}
+.payok .btn navigator:last-child{ background-color: #ff6698; color:#fff;}
+/*确认订单 结束*/
+
+.sure{ display: block; position: fixed; width: 100%; height: 92rpx; color: #fff; background-color: #ff6698; left: 0; bottom: 0; font-size: 30rpx; line-height: 92rpx; text-align: center; z-index: 33;}
+/** 修改默认的navigator点击态 **/
+.navigator-hover { color:#ff6698; background-color: #fff; opacity: 1;}
+/** 自定义其他点击态样式类 **/
+.other-navigator-hover { color:#ff6698; background-color: #fff; opacity: 1;}

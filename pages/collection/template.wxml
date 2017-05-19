@@ -1,0 +1,7 @@
+<template name="nothing">
+	<view class="nothing" >
+		<image src="../img/center_44.png" mode="aspectFit"></image>
+		<view class="fav">还没有收藏的商品哦~</view>
+		<view class="btn" bindtap="jumpback">再逛逛</view>
+	</view>
+</template>

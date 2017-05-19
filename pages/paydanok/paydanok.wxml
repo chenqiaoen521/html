@@ -1,0 +1,14 @@
+<!--支付成功 开始-->
+<view class="payok">
+    <view class="tip">
+        <image src="../img/payok_03.png"></image>
+        <view class="h2">支付成功</view>
+        <view class="h6">我们会尽快为您安排发货</view>
+    </view>
+    <view class="btn">
+        <navigator bindtap="jumpback">返回首页</navigator>
+        <navigator open-type="navigateTo" url="../order-detail/order-detail?oiId={{oid}}">查看详情</navigator>
+    </view>
+</view>
+
+<!--支付成功 结束-->

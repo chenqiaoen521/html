@@ -1,0 +1,29 @@
+<import src="template.wxml"/>
+<block wx:if="{{goods.length>0}}">
+<scroll-view scroll-y="true" class="fav-scroll">
+<checkbox-group bindchange="checkboxChange">
+<block wx:for="{{goods}}" wx:for-item="item">
+  <view class="my-fav">
+	<view class="left">
+	<checkbox class="chk" value="{{item.id + ',' + item.goods_id}}"></checkbox>
+		<image src="{{HOST}}{{item.thumb}}"></image>
+	</view>
+	<view class="right" bindtap="todetail" data-id="{{item.goods_id}}">
+		<view class="name">{{item.name}}</view>
+		<view class="pcice"><text class="red">￥{{item.sellprice}}</text> {{item.stock}}件库存</view>
+	</view>
+</view>
+</block>
+</checkbox-group>
+
+
+</scroll-view>
+
+<view class="bottom">
+	<view class="cancel" bindtap="cancel">取消收藏</view>
+</view>
+
+</block>
+<block wx:else>
+<template is="nothing"></template>
+</block>

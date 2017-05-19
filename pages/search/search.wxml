@@ -1,0 +1,42 @@
+<!--搜索页面 开始-->
+<view class="sear">
+
+    <form bindsubmit="formSubmit">
+    <view class="findn">
+        <view class="find">
+            <view class="fa">
+                <input type="text" name="key" />
+                <button class="findv" formType="submit"><image src="../img/shoplist_06.png"></image></button>
+            </view>
+        </view>
+    </view>
+    </form>
+
+    <view class="near" wx:if='{{oldcode.history.length>0}}'>
+        <view class="tit"><image src="../img/search_03.png"></image><text>最近搜索</text></view>
+        <view class="tips">
+            <block wx:for='{{oldcode.history}}'>
+                <view bindtap='golist' data-wkey="{{item.content}}">{{item.content}}</view>
+            </block>
+            <!-- <navigator url="../shoplist/shoplist">宝宝洗浴</navigator>
+            <navigator url="../shoplist/shoplist">奶瓶</navigator>
+            <navigator url="../shoplist/shoplist">哺育喂养</navigator>
+            <navigator url="../shoplist/shoplist">玻璃奶瓶</navigator>
+            <navigator url="../shoplist/shoplist">孕妇内衣</navigator> -->
+        </view>
+    </view>
+    <view class="hot" wx:if='{{oldcode.hot.length>0}}'>
+        <view class="tit"><text>最近热搜</text></view>
+        <view class="tips">
+            <block wx:for='{{oldcode.hot}}'>
+                <view bindtap='golist' data-wkey="{{item.content}}">{{item.content}}</view>
+            </block>
+            <!-- <navigator url="../shoplist/shoplist">宝宝洗浴</navigator>
+            <navigator url="../shoplist/shoplist">奶瓶</navigator>
+            <navigator url="../shoplist/shoplist">哺育喂养</navigator>
+            <navigator url="../shoplist/shoplist">玻璃奶瓶</navigator>
+            <navigator url="../shoplist/shoplist">孕妇内衣</navigator> -->
+        </view>
+    </view>
+</view>
+<!--搜索页面 开始-->

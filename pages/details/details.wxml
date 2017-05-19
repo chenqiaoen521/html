@@ -1,0 +1,91 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+
+<!--商品详情-->
+<swiper style="width:100%; height:{{imghight}}px" indicator-dots circular autoplay interval="4000" duration="1000">
+    <block wx:for="{{shuju.pic}}">
+        <swiper-item><image src="{{HOST}}{{item}}" class="slide-image" style="height:{{imghight}}px"/></swiper-item>
+    </block>
+</swiper>
+<view class="word">
+    <text class="ntext">{{shuju.name}}</text>
+    <text class="stext">¥ <text class="inline">{{goodprice}}</text></text>
+    <scroll-view class="brand" scroll-x="true" style=" white-space: nowrap; display: flex" >
+        <view><image src="../img/shopxq_03.png"></image><text>配送范围：全国</text></view>
+        <view wx:if="{{shuju.brand_name}}"><image src="../img/shopxq_06.png"></image><text>品牌：{{shuju.brand_name}}</text></view>
+    </scroll-view>
+    <view class="pkind" bindtap="popbuy"><text>选择分类</text><image src="../img/shopxq_11.png"></image></view>
+</view>
+<view class="info">
+    <view class="tit"><text>商品详情</text></view>
+    <view class="pic">
+        <!-- <image src="../img/shopxqjpg_04.jpg" mode="widthFix" ></image>
+        <image src="../img/shopxqjpg_05.jpg" mode="widthFix" ></image> -->
+        <!--<template is="wxParse" data="{{wxParseData:descri.nodes}}"/>-->
+        <!--{{descri}}-->
+        <!--<import src="../../wxParse/wxParse.wxml"/>
+        <view class="wxParse">
+        <template is="wxParse" data="{{wxParseData}}"/>
+        </view>-->
+        <template is="wxParse"  data="{{wxParseData:article.nodes}}" />
+    </view>
+</view>
+<!--商品详情-->
+<form bindsubmit="submit">
+<!--固定操作 开始-->
+<view class="fixdo">
+    <view class="{{keep =='no' ? ' ':'on'}} keep" bindtap="keepstar">
+        <image class="{{keep =='no' ? 'on':' '}}" src="../img/shopxq_30.png"></image>
+        <image class="{{keep =='no' ? ' ':'on'}}" src="../img/shopxq_32.png"></image>
+        <text>收藏</text>
+    </view>
+    <button class="joina"  bindtap="submit">加入购物车</button>
+    <button class="buya" bindtap="submit2">立即购买</button>
+</view>
+<!--固定操作 开始 bindtap="popbuyjr"-->
+
+
+<!--popbuy 开始-->
+<view class="popbg {{popkind ? 'on':' '}}" bindtap="popbuy"></view>
+<view class="popbuy {{popkind ? 'on':' '}}">
+    <image src="../img/shopxq_15.png" class="close" bindtap="popbuy"></image>
+    <view class="tuwen">
+        <image src="{{HOST}}{{shuju.thumb}}"></image>
+        <view class="txt">
+            <text class="nt">{{shuju.name}}</text>
+            <text class="ns">¥<text class="inline">{{goodprice}}</text></text>
+        </view>
+    </view>
+    <view class="sort">
+        <block wx:for="{{shuju.goods_attr}}">
+        <view class="sg">
+            <view class="sn">{{item.name}}</view>
+            <view class="skey" data-cixu="{{index}}">
+                <!-- <block wx:for="{{item.value}}" wx:for-item="p"  wx:for-index="n">
+                <view class="{{cnum == n ? 'on':''}} view" data-alpha-beta="{{n}}"  bindtap="getlist" >
+                    <text>{{p.value}}</text>
+                     <image src="../img/shopxq_19.png"></image>
+                </view>
+                </block>  --> 
+                <radio-group class="radio-group" name="checkgroup{{index}}">
+                    <label class="radio" wx:for="{{item.value}}" wx:for-index="{{dex}}" bindtap="chose" data-sxid="{{item.id}}" data-sxnum="{{index}}">
+                        <radio value="{{item.id}}"  />{{item.value}}
+                    </label>
+                </radio-group>         
+            </view>
+        </view>
+        </block>
+        <view class="sg">
+            <view class="sn">数量</view>
+            <view class="skey">
+                <view class="num">
+                    <image class="jian" bindtap="jian" src="../img/shopxq_23.png"></image>
+                    <input type="text" disabled value="{{carnum}}" />
+                    <image class="jia" bindtap="jia" src="../img/shopxq_25.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<!--popbuy 开始-->
+</form>    
+

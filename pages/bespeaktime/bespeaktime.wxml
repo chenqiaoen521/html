@@ -1,0 +1,24 @@
+<!--预约游泳 开始-->
+<view class="timest">
+    <view class="sg">
+        <image class="con on" src="../img/yuyue_03.png"></image>       
+        <image class="con" src="../img/yuyue_05.png"></image>
+        <view class="time">08:30~12:30</view>
+        <view class="yu">可预约总人数<view class="inline">20</view>人，剩余<view class="inline">8</view>人预约</view>
+    </view>
+    <view class="sg">
+        <image class="con on" src="../img/yuyue_03.png"></image>       
+        <image class="con" src="../img/yuyue_05.png"></image>
+        <view class="time">09:30~11:30</view>
+        <view class="yu">可预约总人数<view class="inline">20</view>人，剩余<view class="inline">8</view>人预约</view>
+    </view>
+    <view class="sg">
+        <image class="con on" src="../img/yuyue_03.png"></image>       
+        <image class="con" src="../img/yuyue_05.png"></image>
+        <view class="time">10:30~12:30</view>
+        <view class="yu">可预约总人数<view class="inline">20</view>人，剩余<view class="inline">8</view>人预约</view>
+    </view>
+</view>
+
+<button class="sure" bindtap='queren' >确认</button>
+<!--预约游泳 结束-->

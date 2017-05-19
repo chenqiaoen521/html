@@ -1,0 +1,99 @@
+<!--确认订单 开始-->
+<view class="make">
+    <view class="place" wx:if="{{listinfo.default_address!= \"\"}}" bindtap="gochose">
+        <image src="../img/makesure_03.png" class="wz"></image>
+        <image src="../img/xiaoxi_03.png" class="cimg"></image>
+        <view class="person">
+            <text class="pn">收货人：{{listinfo.default_address.name}}</text>
+            <text class="pp">{{listinfo.default_address.phone}}</text>
+        </view>
+        <text class="td">收货地址：{{listinfo.default_address.province}} {{listinfo.default_address.city}}{{listinfo.default_address.area}}{{listinfo.default_address.address}}</text>
+    </view>
+    <view class="adda" wx:if="{{listinfo.default_address == \"\"}}" bindtap="goadd">你还没有收货地址，去添加吧 >></view>
+    <view class="shop">
+        <view class="h2">商品清单</view>
+        <view class="list">
+            <block wx:for="{{listinfo.goods_list}}">
+            <view class="sg">
+                <text class="tno">x{{item.num}}</text>
+                <!--<navigator url="../details/details" bindtap="goxq" data-goodid="{{item.id}}" >-->
+                <navigator>
+                    <image src="{{HOST}}{{item.thumb}}"></image>
+                    <text class="tn">{{item.name}}</text>
+                    <text class="td">规格：{{item.attr_value}}</text>
+                    <text class="tm">¥ {{item.sellprice}}</text>
+                </navigator>
+            </view>
+            </block>
+            <!-- <view class="sg">
+                <text class="tno">x2</text>
+                <navigator url="../details/details">
+                    <image src=""></image>
+                    <text class="tn">贝亲宽口径玻璃奶瓶新老包装交替</text>
+                    <text class="td">规格：普通</text>
+                    <text class="tm">¥ 921.00</text>
+                </navigator>
+            </view> -->
+        </view>
+    </view>
+    <view class="set">
+        <view class="dl on">
+            <!-- <view class="dt">优惠券</view>
+            <view class="dd">
+                <view wx:if="{{listinfo.coupons.length>0 && quan==0}}" class="hong" bindtap="goFree">有{{listinfo.coupons.length}}张优惠券可用</view>
+                <view wx:if="{{listinfo.coupons.length>0 && quan!=0}}" class="hong" bindtap="goFree">折扣{{listinfo.coupons[0].jian}}元</view>
+                <view class="hong" wx:if="{{listinfo.coupons.length==0}}">没有优惠券</view>
+            </view>
+            <image src="../img/xiaoxi_03.png" class="jt"></image> -->
+            <view class="dt">优惠券</view>
+            <view class="dd">
+                <view class="hong" bindtap="coupon" wx:if="{{count != 0}}">有{{count}}张优惠券可用</view>
+                <view class="lan" wx:elif="{{count == 0}}">没有优惠券可用</view> 
+            </view>
+        </view>
+        <view class="dl on blue" wx:if="{{coupons.length>0&&coupons_index!=-1}}">
+            <view class="dt">
+                <view class="chose">
+                    <image class="con" src="../img/shopcar_07.png"></image>
+                    <image class="con on" src="../img/yuyue_05.png"></image>
+                </view> 
+            </view>
+            <view class="dd"><view class="inlineb"><text>优惠券(满{{coupons[coupons_index].condition}}元~减{{coupons[coupons_index].jian}}元),{{coupons[coupons_index].hasdate}}</text></view></view>
+        </view>
+        <!-- <view class="dl on">
+            <view class="dt">配送日期</view>
+            <view class="dd">
+                <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                    <view class="picker">{{date}}</view>
+                </picker>
+            </view>
+            <image src="../img/xiaoxi_03.png" class="jt"></image>
+        </view>
+        <view class="dl on">
+            <view class="dt">配送时间</view>
+            <view class="dd">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                    <view class="picker">{{array[index]}}</view>
+                </picker>
+            </view>
+            <image src="../img/xiaoxi_03.png" class="jt"></image>
+        </view> -->
+        <view class="dl">
+            <view class="h6">温馨提示：配送区域内,当日达;超出配送区域,次日到.</view>
+        </view>
+        <view class="dl on">
+            <view class="dt">配送费</view>
+            <view class="dd"><!-- 快递费 --><view class="inline">¥{{listinfo.postage}}</view></view>
+        </view>
+        <view class="dl">
+            <!--<textarea placeholder="你对订单有什么特殊说明，可以在此备注"  bindblur="bindTextAreaBlur" auto-height />-->
+            <input placeholder="你对订单有什么特殊说明，可以在此备注" type="text" />
+        </view>
+        <view class="dl" style="background-color:#fff;">
+            <view class="h3">共<view class="inline">{{listinfo.num}}</view>件商品，合计:<view class="inline">¥ {{listinfo.total_price-quan}}</view>(含快递费)</view>
+        </view>
+    </view>
+</view>
+<!-- <button class="cancle" bindtap="backHome">暂时不要</button> -->
+<button class="sure" bindtap="tijiao">提交订单</button>
+<!--确认订单 结束-->

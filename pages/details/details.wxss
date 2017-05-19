@@ -1,0 +1,68 @@
+
+
+.slide-image{ width: 100%;}
+
+/*商品描述*/
+.word{ padding: 16rpx 0rpx 0 0; border-top: 1px solid #eee; }
+.word .ntext{ display: block; font-size: 28rpx; color: #222; line-height: 40rpx; margin:6rpx 20rpx; }
+.word .stext{ display: block; font-size: 28rpx; color: #ff6698; line-height: 56rpx; margin:0 20rpx; }
+.word .stext .inline{ font-size: 36rpx; font-weight: bold;}
+.word .brand{ border-top: 10rpx solid #f5f5f5; overflow: hidden; height: 98rpx; padding:10rpx 20rpx 16rpx 20rpx;box-sizing: border-box; overflow-x: auto; }
+.word .brand view{ display: inline-block; overflow: hidden; height: 72rpx; margin-right: 40rpx; color: #444;}
+.word .brand view image{ display: block; width: 40rpx; height: 40rpx; margin:16rpx 12rpx 16rpx 0; float: left;}
+.word .brand view text{ display: block; float: left; font-size: 28rpx; line-height: 72rpx; height: 72rpx;  }
+.word .pkind{ display: block; border-top: 2rpx solid #eee; border-bottom: 10rpx solid #f5f5f5; padding: 20rpx 20rpx; overflow: hidden;  }
+.word .pkind text{ display: block; font-size: 30rpx; line-height: 40rpx; height: 40rpx; float: left; }
+.word .pkind image{ display: block; float: right; width: 22rpx; height: 32rpx; margin: 4rpx 0;}
+/*商品描述*/
+
+/*图集展示*/
+.info{ padding:0rpx 0 100rpx 0; }
+.info .tit{ border-bottom: 1px solid #eee; padding: 20rpx 20rpx;}
+.info .tit text{ display: block; height: 40rpx; line-height: 40rpx; font-size: 30rpx; color: #222; border-left:8rpx solid #ff6698; padding-left: 16rpx; }
+.info .pic{ padding: 0;}
+.info .pic image{ display: block; width: 100%; height: auto;}
+/*图集展示*/
+
+/*固定操作*/
+.fixdo{ position: fixed; left: 0; bottom: 0; z-index: 33; width: 100%; padding: 0 0 0 180rpx; background-color: #fff; height: 100rpx; text-align: center; overflow: hidden; border-top: 2rpx solid #eee; font-size: 30rpx;}
+.fixdo .keep{ display: block; width: 180rpx; height: 100rpx; position: absolute; left: 0; top: 0;}
+.fixdo .keep image{ display: block; width: 40rpx; height: 40rpx; margin: 10rpx auto 4rpx auto; display: none;}
+.fixdo .keep image.on{ display: block;}
+.fixdo .keep text{ display: block; height: 46rpx; line-height: 46rpx; font-size:28rpx; color: #333; }
+.fixdo .keep.on .img1{ display: none;}
+.fixdo .keep.on .img2{ display: block;}
+.fixdo .keep.on text{ color: #ff6698;}
+.fixdo .joina{ display: block; width: 50%; height: 100rpx; line-height: 100rpx; font-size:30rpx; color: #fff; background-color: #f8b347; float: left; border-radius: 0 !important;}
+.fixdo .buya{ display: block; width: 50%; height: 120rpx; line-height: 100rpx; font-size:30rpx; color: #fff; background-color: #ff6698; float: left; border-radius: 0 !important;}
+/*固定操作*/
+
+/*popobbuy 开始*/
+.popbg{ position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 32; display: none;}
+.popbuy{ position: fixed; left: 0; bottom:100rpx; background-color: #fff; width: 100%; z-index: 33; display: none;}
+.popbuy .close{ display: block; width: 56rpx; height:56rpx; position: absolute; right:20rpx; top: -28rpx; z-index: 33;}
+.popbuy .tuwen{ position: relative; padding: 40rpx 40rpx 10rpx 310rpx;}
+.popbuy .tuwen image{ display: block; width: 240rpx; height: 240rpx; border: 2rpx solid #eee; border-radius: 8rpx; position: absolute; left: 40rpx; top: -40rpx;}
+.popbuy .tuwen .txt{ display: block;}
+.popbuy .tuwen .txt .nt{ display: block;min-height:100rpx; font-size: 28rpx; color: #111; line-height: 36rpx;}
+.popbuy .tuwen .txt .ns{ display: block; color: #ff3a3a; margin-top: 10rpx; font-size: 32rpx;}
+.popbuy .tuwen .txt .ns .inline{ font-size: 44rpx; padding-left: 6rpx;}
+.popbuy .sort{ padding: 30rpx 40rpx;}
+.popbuy .sg{ display: block; margin: 16rpx 0; position: relative;box-sizing: border-box; padding-left: 110rpx; }
+.popbuy .sg .sn{ position: absolute; left: 0; top: 0; height: 64rpx; line-height: 64rpx; display: block; font-size: 26rpx; color: #333; width: 110rpx;}
+.popbuy .sg .skey{ display: block; overflow: hidden; position: relative;box-sizing: border-box; padding: 0 20rpx;}
+.popbuy .sg .skey view{ display: block; float: left; margin: 5rpx 10rpx 10rpx 5rpx; border: 2rpx solid #eee; position: relative;}
+.popbuy .sg .skey view text{ display: block; font-size: 24rpx; color: #333; height: 50rpx; line-height: 50rpx; margin: 0 26rpx; text-align: center; }
+.popbuy .sg .skey view image{ display: block; width: 20rpx; height: 20rpx; position: absolute; right: 0; bottom: 0; opacity: 0; }
+.popbuy .sg .skey view.on image{ opacity: 1;}
+.popbuy .sg .skey .radio{ display: block; font-size: 24rpx; color: #333; height: 50rpx; border-radius: 25rpx; padding: 0 14rpx 0 10rpx; line-height: 50rpx; text-align: center; float: left; overflow: hidden; margin: 5rpx 10rpx 10rpx 5rpx; border: 2rpx solid #eee; position: relative;}
+.wx-radio-input{ width: 28rpx !important; height: 28rpx !important;}
+.popbuy .sg .skey .num{ display: block; overflow: hidden; margin: 0; border: none; }
+.popbuy .sg .skey .num image{ display: block; width: 56rpx; height: 56rpx; padding: 6rpx;box-sizing: border-box; background-color: #f5f5f5; float: left; position: static; margin: 4rpx; opacity: 1; }
+.popbuy .sg .skey .num input{ display: block; height: 62rpx; border:none; line-height:62rpx; font-size: 36rpx; color: #555; text-align: center; float: left; margin: 4rpx 10rpx; width: 100rpx;}
+
+.popbg.on{ display: block;}
+.popbuy.on{ display: block;}
+/*popobbuy 开始*/
+
+

@@ -1,0 +1,34 @@
+<!--保险区 开始-->
+<view class="safe">
+    <block wx:for="{{datalist}}">
+        <view class="sg" data-alpha-beta="{{item.id}}"  bindtap="goxq">
+            <image src="{{HOST}}{{item.image}}"></image>
+            <view class="txt">
+                <text class='tn'>{{item.title}}</text>
+                <text class="td">{{item.description}}</text>
+            </view>
+        </view>
+    </block>
+    <!--<navigator class="sg" url="../safexq/safexq">
+        <image src="../img/safe_02.jpg"></image>
+        <view class="txt">
+            <text class='tn'>综合意外险升级版</text>
+            <text class="td">所有意外 | 猝死及暴乱 | 意外医疗</text>
+        </view>
+    </navigator>
+    <navigator class="sg" url="../safexq/safexq">
+        <image src="../img/safe_02.jpg"></image>
+        <view class="txt">
+            <text class='tn'>境内自驾游</text>
+            <text class="td">交20年领终身 | 年领年保费46%</text>
+        </view>
+    </navigator>
+    <navigator class="sg" url="../safexq/safexq">
+        <image src="../img/safe_02.jpg"></image>
+        <view class="txt">
+            <text class='tn'>境内自驾游升级版</text>
+            <text class="td">交20年领终身 | 年领年保费46%</text>
+        </view>
+    </navigator>-->
+</view>
+<!--保险区 开始-->

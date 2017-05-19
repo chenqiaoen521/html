@@ -1,0 +1,16 @@
+/*消息 开始*/
+page{ background-color: #f0f1f5; padding-bottom: 92rpx; }
+.timest{ padding: 16rpx 0 0 0;}
+.timest .sg{ padding: 16rpx 80rpx 16rpx 20rpx; position: relative; border-bottom: 2rpx solid #eee; background-color: #fff; font-size: 26rpx; color: #888; line-height: 40rpx; }
+.timest .sg .time{ font-size: 36rpx; color: #222; line-height: 60rpx;}
+.timest .sg .yu .inline{ color: #ff6698; font-weight: bold; padding: 0 4rpx;}
+.timest .sg .con{ position: absolute; right: 30rpx; top: 50%; width: 40rpx; height: 40rpx; margin-top: -20rpx; display: none;}
+.timest .sg .con.on{ display: block;}
+.sure{ display: block; position: fixed; width: 100%; border-radius: 0 !important; height: 92rpx; color: #fff; background-color: #ff6698; left: 0; bottom: 0; font-size: 30rpx; line-height: 92rpx; text-align: center; z-index: 33;}
+/*消息 结束*/
+
+
+/** 修改默认的navigator点击态 **/
+.navigator-hover { color:#fff; background-color: #ff6698; opacity: 1;}
+/** 自定义其他点击态样式类 **/
+.other-navigator-hover { color:#fff; background-color: #ff6698; opacity: 1;}

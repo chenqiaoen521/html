@@ -1,0 +1,62 @@
+/*消息 开始*/
+page{ background-color: #f0f1f5; padding-bottom: 92rpx;  }
+.bespeak{ padding: 0;}
+.bespeak .dl{ padding: 10rpx 50rpx 10rpx 200rpx; background-color: #fff; border-bottom: 2rpx solid #eee; position: relative;}
+.bespeak .dl .dt{ display: block; position: absolute; left: 20rpx; height: 72rpx; line-height: 72rpx; color: #222; font-size: 30rpx; font-weight: bold;}
+.bespeak .dl .dd{ display: block; line-height: 72rpx; overflow: hidden;}
+.bespeak .dl .dd input{ display: block; border: none; height: 72rpx; line-height: 72rpx; color: #888; font-size: 28rpx; text-align: right;}
+.bespeak .dl .dd .picker{ display: block; height: 72rpx; line-height: 72rpx; color: #888; font-size: 28rpx; text-align: right; }
+.bespeak .dl .dd navigator{ display: block; height: 72rpx; line-height: 72rpx; color: #888; font-size: 28rpx; text-align: right; }
+.bespeak .dl .dd .radio{ display: block; float:right; font-size:28rpx; color: #444; margin-left: 30rpx; }
+.bespeak .dl .jt{ display: block; width:16rpx; height: 27rpx; position: absolute; right: 20rpx; top:50%; margin-top: -14rpx;}
+.bespeak .dl.on{ padding: 10rpx 20rpx;}
+.bespeak .dl.on .dt{ position: static; width: 100%;}
+.bespeak .dl.on .dd textarea{ display: block; border: none; min-height: 120rpx; line-height:60rpx; color: #888; font-size: 28rpx; width: 100%;}
+.bespeak .dd .zan{ display: block; height: 72rpx; line-height: 72rpx; color: #888; font-size: 28rpx; text-align: right;}
+.sure{ display: block; position: fixed; width: 100%; height: 92rpx; color: #fff; border-radius: 0 !important ; background-color: #ff6698; left: 0; bottom: 0; font-size: 30rpx; line-height: 92rpx; text-align: center; z-index: 33;}
+/*消息 结束*/
+
+
+/** 修改默认的navigator点击态 **/
+.navigator-hover { color:#fff; background-color: #ff6698; opacity: 1;}
+/** 自定义其他点击态样式类 **/
+.other-navigator-hover { color:#fff; background-color: #ff6698; opacity: 1;}
+
+
+.mask{position: fixed;left: 0;right: 0;bottom:1000px; padding-bottom:200px; color: #fff; z-index:-5; background:#fff ; box-shadow: 0 0 5px #eee;}
+.mask .do{ overflow: hidden; height: 72rpx; line-height: 72rpx; background-color: #f7f7f7; padding: 0 30rpx; font-size: 28rpx; color: #666;}
+.mask .do .cancle{ display: block; float: left;}
+.mask .do .surea{ display: block; float: right; color: #349dde;}
+.pickers{ position: absolute; left: 0; bottom: 0; width: 100%; height: 200px;}
+.picker-view{text-align: center;line-height: 34px !important; color: #444; font-size: 28rpx; height: 34px !important;}
+.none{ opacity: 0;}
+.display{opacity: 1; bottom:0; z-index: 35;/*position: static;*/}
+/*新加*/
+.choosetime{display: -ms-flexbox;display: flex;}
+.choosetime .time{-ms-flex: 1;line-height: 60rpx;  flex: 1;text-align: center;font-size: 13px;}
+.choosetime .time.on{border-bottom: 2px solid #ff6698;}
+
+.rd-time {margin-top: 30rpx;}
+.rd-time .ct{float: left;text-align: center;border-radius: 3px;border:1px solid #fff;  height: 40px;margin:2.5% 2.5%;font-size: 32rpx; line-height: 40px; width: 45%;padding-right:15rpx;background: #fff; }
+.rd-time .ct radio {position: relative;top:-3px;}
+.rd-time .on {background: rgba(45,153,254,.8);color: #fff;}
+/*新加*/
+/*消息 开始*/
+page{ background-color: #f0f1f5; padding-bottom: 92rpx; }
+.timest{ padding: 16rpx 0;}
+.timest .sg{ padding: 16rpx 80rpx 16rpx 20rpx; position: relative; border-bottom: 2rpx solid #eee; background-color: #fff; font-size: 26rpx; color: #888; line-height: 40rpx; }
+.timest .sg .time{ font-size: 36rpx; color: #222; line-height: 60rpx;}
+.timest .sg .yu .inline{ color: #ff6698; font-weight: bold; padding: 0 4rpx;}
+.timest .sg .con{ position: absolute; right: 30rpx; top: 50%; width: 40rpx; height: 40rpx; margin-top: -20rpx; display: none;}
+.timest .sg .con.on{ display: block;}
+.sure{ display: block; position: fixed; width: 100%; border-radius: 0 !important; height: 92rpx; color: #fff; background-color: #ff6698; left: 0; bottom: 0; font-size: 30rpx; line-height: 92rpx; text-align: center; z-index: 33;}
+
+
+
+.clearfix:after{content:'';clear: both;display: table; }
+.timest .choosetime{width:50%; float: left;}
+.timest .choosetime .tit{height: 38px; line-height: 18px; font-size: 14px;display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;overflow:hidden;}
+.timest .choosetime:nth-child(odd){border-right: 1px solid #ccc;}
+/*消息 结束*/

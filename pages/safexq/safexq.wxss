@@ -1,0 +1,12 @@
+/*保险详情*/
+page{ background-color: #f6f6fa;}
+.safexq{ padding: 0;}
+.safexq image{ display: block; width: 100%;} 
+.safexq .tail{ padding: 20rpx;}
+.safexq .tail .sg{ background-color: #fff; padding: 20rpx; border: 2rpx solid #eee; font-size: 26rpx; color: #666; line-height: 48rpx; margin-bottom: 20rpx; border-radius: 6rpx;}
+.safexq .tail .sg .tn{ display: block; overflow: hidden; margin-bottom: 10rpx; color: #000; font-size: 28rpx; line-height: 60rpx;}
+.safexq .tail .sg .tn text{ display: block; float: left;}
+.safexq .tail .sg .tn text:last-child{ float: right;}
+.safexq .tail .sg .td{ display: block;}
+.safexq wx-image{ display:block; width:100% !important ;}
+/*保险详情*/

@@ -1,0 +1,39 @@
+<block wx:for="{{coupon}}">
+<view class="coupon" wx:if="{{item.is_use != -1}}" data-id="{{item.id}}" data-quan="{{item.jian}}">
+	<view class="left">
+		<view class="up">
+			¥<text class="price">{{item.money}}</text>
+			<view wx:if="{{item.condition != undefined}}" class="price-desc">满{{item.condition}}元使用</view>
+			<view wx:if="{{item.store_name}}" class="price-desc">门店~{{item.store_name}}</view>
+		</view>
+		<view class="down">{{item.cate_name}}</view>
+	</view>
+	<view class="right" bindtap="fetch" data-id="{{item.id}}">
+		<view class="up">
+			<view class="desc">疯抢中！~还剩{{item.surplus}}张</view>
+			<view class="name">立即领取</view>
+		</view>
+		<view class="down">已抢{{item.percent}}%</view>
+	</view>
+</view>
+</block>
+
+
+<!-- <view class="coupon disable">
+	<view class="left">
+		<view class="up">
+			¥<text class="price">300</text>
+			<view class="price-desc">满2000元使用</view>
+		</view>
+		<view class="down">还有8天过期</view>
+	</view>
+	<view class="right">
+		<view class="up">
+			<view class="name">现金抵用优惠券</view>
+			<view class="desc">商城在线支付专享</view>
+		</view>
+		<view class="down">有效期至：2016年4月1号</view>
+		<view class="invalid">已失效</view>
+	</view>
+</view> -->
+

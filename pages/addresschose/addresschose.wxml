@@ -1,0 +1,22 @@
+<scroll-view scroll-y="true" class="adscoll">
+<block wx:for="{{addresses}}" wx:for-item="address">
+<view class="address" bindtap="toback" data-id="{{address.id}}">
+	<view class="up">
+		{{address.name}}
+		<view class="right" >
+			{{address.phone}}  
+			<!-- <image class="del"  src="../img/center_17.png" data-id="{{address.id}}"  bindtap='del'></image> -->
+		</view>
+	</view>
+	<view  	
+	  class="down">
+		<text class="cont"><text class="red" wx:if="{{address.status === 1}}">[默认]</text> {{address.province}}{{address.city}}{{address.area}}{{address.street}}{{address.address}}</text>
+		<image  class="back" src="../img/center_13.png"></image>
+	</view>
+</view>
+</block>
+</scroll-view>
+
+<!-- <view class="complete" bindtap="toDetail">
+	添加收货地址
+</view>  -->

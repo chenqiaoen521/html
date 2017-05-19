@@ -1,0 +1,13 @@
+/*消息 开始*/
+page{ background-color: #f0f1f5; }
+.mess{ padding: 0;}
+.mess .sg{ padding: 20rpx 40rpx 20rpx 70rpx; box-sizing: border-box; background-color: #fff; border-bottom: 2rpx solid #eee; position: relative; }
+.mess .sg .con{ display: block; width:40rpx; height: 36rpx; position: absolute; left: 20rpx; top: 34rpx; }
+.mess .sg .jt{ display: block; width:20rpx; height: 34rpx; position: absolute; right: 20rpx; top:50%; margin-top: -17rpx; }
+.mess .sg .name{ padding-right:140rpx; overflow: hidden; position: relative;}
+.mess .sg .name text{ display: block; font-size: 28rpx; color:#333; line-height: 60rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mess .sg .name .time{ display: block; position: absolute; right: 0; top: 0; height: 60rpx; line-height: 60rpx; color: #777; font-size: 26rpx; text-align: right; width: 140rpx;}
+.mess .sg .td{ display: block; font-size: 24rpx; color: #888; line-height: 40rpx; }
+
+/* .moveup{width: 100%;text-align: center; font-size: 36rpx; line-height:85rpx;} */
+/*消息 结束*/
