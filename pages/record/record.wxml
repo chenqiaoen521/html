@@ -1,0 +1,21 @@
+<scroll-view class="scroll">
+<block wx:if="{{list.length > 0}}">
+	<view class="cell" wx:for="{{list}}">
+		<view class="product">
+			<image class="img" src="{{HOST}}{{item.goods_thumb}}"></image>
+			<view class="desc">
+				<text class="name">{{item.goods_name}}</text>
+				<view class="score"><text>{{item.price}}</text>积分</view>
+			</view>
+		</view>
+		<view class="bottom">
+			<text class="date">{{item.add_time}}</text>
+			<view class="btn" size="mini" type="primary">兑换成功</view>
+		</view>
+	</view>
+</block>
+	<view wx:elif="{{list.length == 0}}" class="none">
+		<image src="../img/record.png"></image>
+		<view class="txt">还没有兑换记录</view>
+	</view>
+</scroll-view>

@@ -1,0 +1,78 @@
+<scroll-view class="scroll">
+<view class="header">
+	<image class="header-img" src="../img/score.png"></image>
+	<view class="box">
+		<view class="tit">我的积分</view>
+		<view class="score">135.6</view>
+	</view>
+	<view class="explain">
+		<image src="../img/jifen.png" class="jifen"></image>
+		<text class="ming">积分说明</text>
+	</view>
+</view>
+<view class="mid">
+	<view class="unit">
+		<image class="icon" src="../img/dai.png"></image>
+		<view class="txt">
+			<view class="name">积分商城<image  class="hot" src="../img/hot.png"></image></view>
+			<view class="sub">轻松兑换精美礼品</view>
+		</view>
+	</view>
+	<view class="unit">
+		<image class="icon" src="../img/goft.png"></image>
+		<view class="txt">
+			<view class="name">积分订单</view>
+			<view class="sub">积分兑换的礼品</view>
+		</view>
+	</view>
+</view>
+<view class="title">
+	<text class="txt">4月积分明细</text>
+</view>
+<view class="cell">
+	<view class="txt">
+		<text class="desc">订单积分</text>
+		<view class="date">2016-04-15</view>
+	</view>
+	<text class="score">+159</text>
+</view>
+<view class="cell">
+	<view class="txt">
+		<text class="desc">兑换游泳券</text>
+		<view class="date">2016-04-15</view>
+	</view>
+	<text class="score jian">-19</text>
+</view>
+<view class="cell">
+	<view class="txt">
+		<text class="desc">兑换商品</text>
+		<view class="date">2016-04-15</view>
+	</view>
+	<text class="score jian">-59</text>
+</view>
+
+<view class="title">
+	<text class="txt">3月积分明细</text>
+</view>
+<view class="cell">
+	<view class="txt">
+		<text class="desc">订单积分</text>
+		<view class="date">2016-04-15</view>
+	</view>
+	<text class="score">+159</text>
+</view>
+<view class="cell">
+	<view class="txt">
+		<text class="desc">兑换游泳券</text>
+		<view class="date">2016-04-15</view>
+	</view>
+	<text class="score jian">-19</text>
+</view>
+<view class="cell">
+	<view class="txt">
+		<text class="desc">兑换商品</text>
+		<view class="date">2016-04-15</view>
+	</view>
+	<text class="score jian">-59</text>
+</view>
+</scroll-view>

@@ -1,0 +1,40 @@
+
+<!--<view class="watch" >
+	<view class='sg' bindtap="Golist" data-typenum="1">
+		<view animation="{{animationData}}" class='s8'>
+			
+				<view class='s4'>
+					<view class='s2'>
+						<view class='s0'></view>
+					</view>
+				</view>
+			
+		</view>
+		<text class="wenzi">次卡</text>
+	</view>
+	<view class='sg two' bindtap="Golist" data-typenum="2">
+		<view animation="{{animationData}}" class='s8'>
+			
+				<view class='s4'>
+					<view class='s2'>
+						<view class='s0'></view>
+					</view>
+				</view>
+		</view>
+		<text class="wenzi">年卡</text>
+	</view>
+</view>-->
+
+<view class="tip"><text>查看我的团购券</text></view>
+<view class="watchcard" >
+	<view class='sg' bindtap="Golist" data-typenum="1">
+		<text class="wenzi">次卡</text>
+		<image src="../img/center_13.png"></image>
+	</view>
+	<view class='sg two' bindtap="Golist" data-typenum="2">
+		<text class="wenzi">年卡</text>
+		<image src="../img/center_13.png"></image>
+	</view>
+</view>
+
+

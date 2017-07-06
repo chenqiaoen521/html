@@ -25,21 +25,18 @@ Page({
             let arr = new Array()
             let cp = []
             for(var i in info){
-                if(util.isExpire(info[i].end_time)){
-                    continue
-                }else{ 
-                    let str ='游泳券' + " 抵扣"+info[i].jian+'元' + info[i].hasdate
-                    if(!util.isExpire(info[i].end_time)){
-                        if (i <= 5){
-                            arr.push(str)
-                            cp.push(info[i])   
-                        } 
+                if(info[i].is_past==0 &&info[i].is_use==1){
+                    let str ='游泳券' + " 抵扣"+1+'次' + info[i].hasdate
+                    if(arr.length<7){
+                        arr.push(str)
+                        cp.push(info[i])   
                     }
                 }
             }
             that.setData({
                 coupons:cp
             })
+            console.log(arr)
             wx.showActionSheet({
                 itemList: arr,
                 success: function(res) {
@@ -48,11 +45,11 @@ Page({
                         coupons_index : -1
                      })
                     }else{
-                        let cd = that.data.price - cp[res.tapIndex].condition 
+                        /*let cd = that.data.price - cp[res.tapIndex].condition 
                         if(cd < 0) {
                             wx.showToast({title: '满'+cp[res.tapIndex].condition +'可用',duration:4000,image:'../img/warn.png'})
                             return
-                        }
+                        }*/
                         that.setData({
                             coupons_index : res.tapIndex
                         })
@@ -88,11 +85,11 @@ Page({
         oldtime = first
         let that = this
         let token = wx.getStorageSync('token')
-        let coupon_price = 0
+        let voucher_id = 0
         if(that.data.coupons.length == 0 || that.data.coupons_index == -1){
-            coupon_price = 0
+            voucher_id = 0
         }else{
-            coupon_price = that.data.coupons[that.data.coupons_index].jian
+            voucher_id = that.data.coupons[that.data.coupons_index].id
         }
         wx.request({
             url:app.globalData.url+'api/paySubscribe',
@@ -100,7 +97,7 @@ Page({
             method:'POST',
             data:{
                 oi_id:that.data.oi_id,
-                voucher_money:coupon_price,
+                voucher_id:voucher_id,
                 price:that.data.price
             },
             success:function(res) {
@@ -117,7 +114,18 @@ Page({
                         })
                         return
                     }
-                    that.__pay ()
+                    if(voucher_id==0){
+                        that.__pay ()
+                    }else{
+                        wx.showToast({
+                            title: '支付成功',
+                            icon: 'success',
+                            duration: 2000
+                        })
+                        setTimeout(function(){
+                            wx.redirectTo({url:"../order-swim/order-swim"})
+                        },1500)
+                    }
                 }
 
             },
@@ -176,12 +184,11 @@ Page({
             let count = 0
             for(var i in info){
                 info[i].hasdate = util.string2date(info[i].end_time)
-                if(!util.isExpire(info[i].end_time)){
-                    if(i<=5){
-                        count++
-                    }
+                if(info[i].is_past==0 &&info[i].is_use==1){
+                    count++
                 }
             }
+            count>6?6:count
             that.setData({
                 count:count
             })

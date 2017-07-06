@@ -196,8 +196,14 @@ Page({
         data:{'pid':province},
         header:{"Authorization": "Bearer "+token},
         success: function(res) {
+          let arr= [
+            {REGION_ID: -1, REGION_CODE: "  ", REGION_NAME: "   ", PARENT_ID: 17, REGION_LEVEL: 0}
+          ]
+          let dataArr = res.data.data
+          arr.concat(dataArr)
+          console.log(dataArr.unshift(arr))
           that.setData({
-            city:res.data.data,
+            city:arr,
             citys:res.data.data[y]
             })
          }

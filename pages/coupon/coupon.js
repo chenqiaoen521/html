@@ -30,7 +30,7 @@ Page({
 		})
 	},
 	onReady () {
-		this.__getData()
+		//this.__getData()
 	},
 	__getData () {
 		let that = this
@@ -47,7 +47,10 @@ Page({
 		    let info = res.data.data
 		    for(var i in info){
 		    	info[i].hasdate = util.string2date(info[i].end_time)
-		    	info[i].type = util.getType(info[i].type)  
+		    	let {type,color} = util.getType(info[i].type)
+		    	info[i].type = type
+		    	info[i].type2 = info[i].type
+		    	info[i].color = color
 		    }
 		    that.setData({
 		    	coupon:info

@@ -21,7 +21,8 @@
                     <image src="{{HOST}}{{item.thumb}}"></image>
                     <text class="tn">{{item.name}}</text>
                     <text class="td">规格：{{item.attr_value}}</text>
-                    <text class="tm">¥ {{item.sellprice}}</text>
+                    <text class="tm" wx:if="{{!is_integral}}">¥ {{item.price}}</text>
+                    <text class="tm" wx:if="{{is_integral}}">{{item.price}}积分</text>
                 </navigator>
             </view>
             </block>
@@ -37,7 +38,7 @@
         </view>
     </view>
     <view class="set">
-        <view class="dl on">
+        <view class="dl on" wx:if="{{!is_integral}}">
             <!-- <view class="dt">优惠券</view>
             <view class="dd">
                 <view wx:if="{{listinfo.coupons.length>0 && quan==0}}" class="hong" bindtap="goFree">有{{listinfo.coupons.length}}张优惠券可用</view>
@@ -84,6 +85,10 @@
         <view class="dl on">
             <view class="dt">配送费</view>
             <view class="dd"><!-- 快递费 --><view class="inline">¥{{listinfo.postage}}</view></view>
+        </view>
+        <view wx:if="{{listinfo.is_integral_postage == 1}}" class="dl on" style="margin-top:20rpx;">
+            <view class="dt">积分抵用配送费</view>
+            <view class="dd"><!-- 快递费 --><view class="inline"><switch bindchange="isDel"/></view></view>
         </view>
         <view class="dl">
             <!--<textarea placeholder="你对订单有什么特殊说明，可以在此备注"  bindblur="bindTextAreaBlur" auto-height />-->

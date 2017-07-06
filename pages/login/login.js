@@ -8,10 +8,12 @@ Page({
     		method:'POST',
   			header:{"Authorization": "Bearer "+token},
   			success (res) {
+
+          console.log(res)
   				if(!res.data.success){
-  					wx.showModal({
+  					/*wx.showModal({
 			            title: '提示',
-			            content: '不授权信息,可能无法完整浏览小程序内容',
+			            content: '程序出现错误,请删除后从新下载',
 			            showCancel:false,
 			            confirmText:'确定',
 			            success: function(res) {
@@ -19,7 +21,7 @@ Page({
   								url: '../index/index'
 							})
 		  				}
-			  		})
+			  		})*/
 			  		return
 			  	}
   				wx.setStorageSync('token',res.data.data.token)

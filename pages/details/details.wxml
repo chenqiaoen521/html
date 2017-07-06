@@ -8,9 +8,13 @@
 </swiper>
 <view class="word">
     <text class="ntext">{{shuju.name}}</text>
-    <text class="stext">¥ <text class="inline">{{goodprice}}</text></text>
-    <scroll-view class="brand" scroll-x="true" style=" white-space: nowrap; display: flex" >
-        <view><image src="../img/shopxq_03.png"></image><text>配送范围：全国</text></view>
+    <text class="stext" wx:if="{{!is_integral}}">¥ <text class="inline">{{goodprice}}</text></text>
+    <text class="stext" wx:if="{{is_integral}}"><text class="inline">{{goodprice}}</text>积分</text>
+    <!--<text class='ytext' wx:if='{{shuju.is_activity==1}}'>{{shuju.active_condition}}</text>-->
+    <scroll-view class="brand" scroll-x="true" style=" white-space: nowrap; display: flex" wx:if='{{ shuju.is_activity==1 ||shuju.is_integral==1 || shuju.is_coupon==1}}'>
+        <view wx:if='{{shuju.is_activity==1}}'><image src="../img/shopxq_06.png"></image><text>消费满{{shuju.active_condition}}元免邮费</text></view>
+        <view wx:if='{{goodjifen!=""}}'><image src="../img/shopxq_07.png"></image><text>购买赠送{{goodjifen}}积分</text></view>
+        <view wx:if='{{shuju.is_coupon==1}}'><image src="../img/shopxq_08.png"></image><text>购买赠送游泳券</text></view>
         <view wx:if="{{shuju.brand_name}}"><image src="../img/shopxq_06.png"></image><text>品牌：{{shuju.brand_name}}</text></view>
     </scroll-view>
     <view class="pkind" bindtap="popbuy"><text>选择分类</text><image src="../img/shopxq_11.png"></image></view>
@@ -32,14 +36,14 @@
 <!--商品详情-->
 <form bindsubmit="submit">
 <!--固定操作 开始-->
-<view class="fixdo">
-    <view class="{{keep =='no' ? ' ':'on'}} keep" bindtap="keepstar">
+<view class="fixdo" style="{{is_integral?'padding:0;':''}}">
+    <view  wx:if="{{!is_integral}}"     class="{{keep =='no' ? ' ':'on'}} keep" bindtap="keepstar">
         <image class="{{keep =='no' ? 'on':' '}}" src="../img/shopxq_30.png"></image>
         <image class="{{keep =='no' ? ' ':'on'}}" src="../img/shopxq_32.png"></image>
         <text>收藏</text>
     </view>
-    <button class="joina"  bindtap="submit">加入购物车</button>
-    <button class="buya" bindtap="submit2">立即购买</button>
+    <button wx:if="{{!is_integral}}" class="joina"  bindtap="submit">加入购物车</button>
+    <button class="buya" style="{{is_integral?'width:100%;':''}}" bindtap="submit2">{{is_integral?'立刻兑换':'立即购买'}}</button>
 </view>
 <!--固定操作 开始 bindtap="popbuyjr"-->
 
@@ -52,7 +56,8 @@
         <image src="{{HOST}}{{shuju.thumb}}"></image>
         <view class="txt">
             <text class="nt">{{shuju.name}}</text>
-            <text class="ns">¥<text class="inline">{{goodprice}}</text></text>
+            <text class="ns" wx:if="{{!is_integral}}">¥<text class="inline">{{goodprice}}</text></text>
+            <text class="ns" wx:if="{{is_integral}}"><text class="inline">{{goodprice}}</text>积分</text>
         </view>
     </view>
     <view class="sort">

@@ -22,7 +22,7 @@ Page({
             wx.request({
                 url:app.globalData.url+'api/pay_order',
                 header:{"Authorization": "Bearer "+token},
-                data:{id:e.id},
+                data:{id:e.id,is_integral:e.is_integral},
                 success:function(res) {
                 if(res.statusCode === 401){
                     wx.redirectTo({

@@ -56,17 +56,18 @@
 		<view class="scale">规格：{{item.goods_attr_values}}</view>
 		<!-- <view class="rating">评价</view> -->
 		<view class="flag">
-			<view class="price">¥{{item.price}}</view>
+			<view wx:if="{{order.is_integral===1}}" class="price">{{item.price}}积分</view>
+			<view wx:if="{{order.is_integral===-1}}" class="price">¥{{item.price}}</view>
 			<view class="count">x{{item.num}}</view>
 		</view>
 	</view>
 </view>
 
-<template is="total" data="{{count:order.count,price:order.prices}}"/>
+<template is="total" data="{{count:order.count,price:order.pay_price}}"/>
 
 
 <view class="tip grep">支付信息</view>
-<view class="tip white">订单金额<text class="right">¥{{order.prices}}</text></view>
+<view class="tip white">订单金额<text class="right">¥{{order.pay_price}}</text></view>
 <view class="tip white" wx:if="{{order.jian}}">优惠金额<text class="right">¥{{order.jian}}</text></view>
 <view class="tip white">运费<text class="right">¥<block wx:if="{{big_postage}}">{{big_postage}}</block>
 <block wx:else>0</block>

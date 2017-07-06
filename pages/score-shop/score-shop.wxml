@@ -1,0 +1,66 @@
+<view class="header">
+	<image class="header-img" src="../img/score.png"></image>
+	<view class="box">
+		<view class="tit">我的积分</view>
+		<view class="score">{{score}}</view>
+	</view>
+	<navigator class="explain" url="../liushui/liushui">
+		<image src="../img/jifen.png" class="jifen"></image>
+		<text class="ming">积分流水</text>
+	</navigator>
+</view>
+
+<view class="jf">
+	<view class="item {{type==1?'on':''}}" bindtap="togglejf">
+		<image src="../img/dai.png"></image>
+		<view class="txt {{type==1?'active':''}}">积分兑换</view>
+	</view>
+	<view class="item {{type==2?'on':''}}" bindtap="toggleyhj">
+		<image src="../img/center_092.png"></image>
+		<view class="txt {{type==2?'active':''}}">优惠券兑换</view>
+	</view>
+	<navigator class="item" url="../record/record">
+		<image src="../img/jfdh.png"></image>
+		<view class="txt">兑换记录</view>
+	</navigator>
+</view>
+<view class="jfdh"><view class="liner"></view><text class="txt">{{toggle}}</text><view class="liner"></view></view>
+<block wx:if="{{type==1}}">
+<view class="list-product">
+	<block wx:for="{{listView}}">
+		<view class="swapper">
+			<view class="item" bindtap="goxq"  data-id="{{item.id}}">
+				<view class="img">
+					<image  src="{{HOST}}{{item.thumb}}" class="img"></image>
+				</view>
+				<view class="title">{{item.name}}</view>
+				<view class="bottom">
+					<view class="score"><text>{{item.sell_price}}</text>积分</view>
+					<view class="btn">兑换</view>
+				</view>
+			</view>
+		</view>
+	</block>
+</view>
+</block>
+<block wx:else>
+	<block wx:for="{{listView}}">
+		<view class="coupon" wx:if="{{item.is_use != -1}}">
+			<view class="left">
+				<view class="up">
+					¥<text class="price">{{item.money}}</text>
+					<view wx:if="{{item.condition != undefined}}" class="price-desc">满{{item.condition}}元使用</view>
+					<view wx:if="{{item.store_name}}" class="price-desc">门店~{{item.store_name}}</view>
+				</view>
+				<view class="down">{{item.cate_name}}</view>
+			</view>
+			<view class="right" bindtap="fetchCoupon" data-id="{{item.id}}">
+				<view class="up">
+					<view class="desc">{{item.integral_value}}积分</view>
+					<view class="name">立即兑换</view>
+				</view>
+				<view class="down">已兑换{{item.percent}}%</view>
+			</view>
+		</view>
+	</block>
+</block>

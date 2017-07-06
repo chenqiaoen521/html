@@ -86,7 +86,8 @@
 				<view class="name" bindtap="todetail" data-id="{{item.goods_id}}">{{item.goods_name}}</view>
 				<view class="scale">规格：{{item.goods_attr_values}}</view>
 				<view class="flag">
-					<view class="price">¥{{item.price}}</view>
+					<view wx:if="{{order.is_integral===1}}" class="price">{{item.price}}积分</view>
+					<view wx:if="{{order.is_integral===-1}}" class="price">¥{{item.price}}</view>
 					<view class="count">x{{item.num}}</view>
 				</view>
 			</view>

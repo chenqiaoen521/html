@@ -43,22 +43,45 @@ function expire(str){
   return true
 }
 function getType (tp) {
-    let x = ""
+    let x = {}
     switch(tp){
       case myconst.GOODS:
-        x = "抵用券"
+        x.type="抵用券";
+        x.color="#ffca13";
         break;
       case myconst.SWIM:
-        x = "游泳券"
+        x.type="游泳券";
+        x.color="#25e2fe";
         break;
       case myconst.DELIVERY:
-        x = "配送券"
+        x.type="配送券";
+        x.color="#ffca13";
         break;
       case myconst.REGISTER:
-        x = "注册送游泳券"
+        x.type="注册送游泳券";
+        x.color="#ffca13";
+        break;
+      case 4:
+        x.type="(赠送)游泳券";
+        x.color="#780cfd";
+        break;
+      case 5:
+        x.type="(积分兑换)游泳券";
+        x.color="#0cdefd";
+        break;
+      case 6:
+        x.type="(团购)游泳券";
+        x.color="#ffca13";
         break;
      }
+     console.log(x)
      return x;
+}
+function toDate(time){
+  var s =time
+  s = s.replace(/-/g,"/")
+  var d = new Date(s)
+  return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()
 }
 function num2percent (a,b) {
   a = parseInt(a)
@@ -70,5 +93,6 @@ module.exports = {
   string2date:string2date,
   isExpire:expire,
   getType:getType,
-  num2percent:num2percent
+  num2percent:num2percent,
+  toDate:toDate
 }

@@ -1,0 +1,12 @@
+<scroll-view class="scroll">
+	<view class="table-head bgw">
+		<view class="th">积分值</view>
+		<view class="th">使用说明</view>
+		<view class="th">使用日期</view>
+	</view>
+	<view class="table-head" wx:for="{{list}}">
+		<view class="th tr jifen" style="{{item.type == 1?'color:red':'color:green'}}">{{item.type == 1?' +  ':' -  '}}{{item.num}}</view>
+		<view class="th tr mx" style="{{item.type == 1?'color:red':'color:green'}}">{{item.use}}</view>
+		<view class="th tr riqi">{{item.updated_at}}</view>
+	</view>
+</scroll-view>

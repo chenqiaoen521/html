@@ -89,7 +89,7 @@ Page({
 		    	let info = res.data.data
 			    for(var i in info){
 			    	info[i].hasdate = util.string2date(info[i].end_time)
-			    	info[i].type = this.__getType(info[i].type)
+			    	info[i].type = util.getType(info[i].type).type
 			    	info[i].percent = util.num2percent(info[i].surplus,info[i].num)
 			    }
 			    this.setData({
@@ -113,6 +113,15 @@ Page({
 			case REGISTER:
 			  x = "注册送游泳券"
 			  break;
+			case 4:
+			  x = "(赠送)游泳券"
+			  break;
+			case 5:
+			  x = "(积分兑换)游泳券"
+			  break;
+		 	case 6:
+		  	  x = "(团购)游泳券"
+		      break;
 		 }
 		 return x;
 	}

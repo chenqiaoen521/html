@@ -17,6 +17,15 @@ Page({
     quan (e) {
         wx.navigateTo({url:'../coupon-fetch/coupon-fetch'})
     },
+    onShareAppMessage () {
+        wx.showShareMenu({
+            withShareTicket: true
+        })
+        return {
+          title: '聚婴汇',
+          path: '/pages/index/index'
+        }
+    },
     onLoad: function(options) {
         var that = this
         wx.getSystemInfo({
@@ -47,7 +56,6 @@ Page({
         wx.request({
             url:that.data.HOST+'api/ads',
             success: function(res) {
-                //console.log(res.data.data)
                 that.setData({
                     ads : res.data.data
                 })
@@ -67,17 +75,21 @@ Page({
         wx.request({
             url:that.data.HOST+'api/firstButton',
             success: function(res) {
-                //console.log(res.data.data)
+                console.log(res.data.data)
                 that.setData({
                     firstButton : res.data.data
                 })
+            },
+            fail(e){
+              console.log(e)
             }
         })
         //移动的新闻
         wx.request({
             url:that.data.HOST+'api/lunboArticles',
             success: function(res) {
-                //console.log(res.data.data)
+              console.log('lunbo')
+                console.log(res.data.data)
                 that.setData({
                     movenew : res.data.data
                 })

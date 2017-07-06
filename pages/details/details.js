@@ -4,6 +4,7 @@ var app = getApp()
 var arr=[]
 var lin
 var WxParse = require('../../wxParse/wxParse.js')
+var id = ''
 Page({
     data: {
         //收藏
@@ -30,6 +31,17 @@ Page({
         goodprice:'',
         //库存
         goodkucun:'',
+        is_integral:false,
+        goodjifen:'',
+    },
+    onShareAppMessage () {
+        wx.showShareMenu({
+            withShareTicket: true
+        })
+        return {
+          title: '聚婴汇',
+          path: '/pages/details/details?id='+id
+        }
     },
     onLoad: function(options) {
         var that = this 
@@ -40,6 +52,7 @@ Page({
         })
 
         let token = wx.getStorageSync('token')
+        id = options.id
         wx.request({
             url:that.data.HOST+'api/goods/'+options.id,
             //header:{"Authorization": "Bearer "+app.globalData.token},
@@ -60,12 +73,18 @@ Page({
                   })  
                 }
                 let info = res.data.data
+                if(res.data.data.is_integral == 1){
+                    that.setData({
+                        is_integral:true
+                    })
+                }
                 that.setData({
                     shuju: res.data.data,
                     keep:res.data.data.goodsKeep,
                     goodstr:res.data.data.goods_attr,
                     goodprice:res.data.data.sell_price,
                     goodkucun:res.data.data.stock,
+                    goodjifen:res.data.data.integral,
                 })        
                 WxParse.wxParse('article','html',info.content,that)           
             }
@@ -242,7 +261,8 @@ Page({
                         that.setData({
                             zuhe:zu,
                             goodprice : that.data.shuju.attr_json.sys_attrprice[zu].sell_price, 
-                            goodkucun : that.data.shuju.attr_json.sys_attrprice[zu].stock      
+                            goodkucun : that.data.shuju.attr_json.sys_attrprice[zu].stock, 
+                            goodjifen : that.data.shuju.attr_json.sys_attrprice[zu].integral,     
                         })
                         that.popbuyjr()  
                     }
@@ -286,7 +306,8 @@ Page({
                         that.setData({
                             zuhe:zu,
                             goodprice : that.data.shuju.attr_json.sys_attrprice[zu].sell_price, 
-                            goodkucun : that.data.shuju.attr_json.sys_attrprice[zu].stock      
+                            goodkucun : that.data.shuju.attr_json.sys_attrprice[zu].stock, 
+                            goodjifen : that.data.shuju.attr_json.sys_attrprice[zu].integral,        
                         })
                         that.popbuygm()  
                     }
@@ -330,7 +351,8 @@ Page({
                         that.setData({
                             zuhe:zu,
                             goodprice : that.data.shuju.attr_json.sys_attrprice[zu].sell_price, 
-                            goodkucun : that.data.shuju.attr_json.sys_attrprice[zu].stock      
+                            goodkucun : that.data.shuju.attr_json.sys_attrprice[zu].stock, 
+                            goodjifen : that.data.shuju.attr_json.sys_attrprice[zu].integral,        
                         })
                        //that.popbuyjr()  
                     }

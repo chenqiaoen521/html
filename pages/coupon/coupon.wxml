@@ -1,18 +1,26 @@
 <block wx:for="{{coupon}}">
 <view class="coupon {{item.is_past=='1'?'disable':''}}"  wx:if="{{item.is_use != -1}}"  data-id="{{item.id}}" data-quan="{{item.jian}}">
 	<view class="left">
-		<view class="up">
-			¥<text class="price">{{item.jian}}</text>
-			<view wx:if="{{item.condition != undefined}}" class="price-desc">满{{item.condition}}元使用</view>
+		<view class="up" style="background-color:{{item.is_past=='1'? '':item.color}}">
+			<block wx:if="{{item.type2 == 1}}">	
+				¥<text class="price red">{{item.jian}}</text>
+			</block>
+			<block wx:else>	
+				可抵用<text class="price red">{{item.num}}</text>次
+			</block>
+			<!--<view wx:if="{{item.condition != undefined}}" class="price-desc" wx:if="{{item.category_name}}">使用条件 :<text class="red"> {{item.category_name}}</text></view>-->
+			<view class="down">{{item.hasdate}}</view>
 		</view>
-		<view class="down">{{item.hasdate}}</view>
+		
 	</view>
 	<view class="right">
 		<view class="up">
-			<view class="name">优惠券({{item.type}})</view>
+			<view class="name">{{item.type}}<block wx:if="{{item.swim_type==1||item.swim_type==2}}">{{item.swim_type==1?'(次卡)':'(年卡)'}}</block></view>
 			<view class="desc">商城在线支付专享</view>
+			<view class="price-desc" wx:if="{{item.condition != undefined}}" wx:if="{{item.category_name}}">使用条件 :<text class="red"> {{item.category_name}}</text></view>
+			<view class="down">有效期至：<text class="red">{{item.end_time}}</text></view>
 		</view>
-		<view class="down">有效期至：{{item.end_time}}</view>
+		
 		<view class="invalid" wx:if="{{item.is_past=='1'}}">已失效</view>
 	</view>
 </view>

@@ -3,6 +3,8 @@ var chuan
 var attr
 var coupon = 0
 var util = require('../../utils/util.js')
+var is_integral_postage = -10
+var peisongfei = 0
 var quan
 Page({    
     data: {
@@ -24,7 +26,8 @@ Page({
         way:false,
         count:0,
         coupons_index:-1,
-        coupons:[]
+        coupons:[],
+        is_integral:false
     },
     bindDateChange: function(e) {
         this.setData({
@@ -37,14 +40,12 @@ Page({
             let arr = new Array()
             let cp = []
             for(var i in info){
-                if(util.isExpire(info[i].end_time)){
-                    
-                }else{ 
+                if(!util.isExpire(info[i].end_time) && info[i].type != 5){
                     let str = ""
                     if(info[i].type == 1 || info[i].type == 0){
                         str ='抵用券' + " 抵扣"+info[i].jian+'元' + info[i].hasdate
                     }
-                    if(info[i].type == 3){
+                    if(info[i].type == 3 ){
                         str ='配送券' + " 抵扣"+info[i].jian+'元' + info[i].hasdate
                     }
                     if (i <= 5){
@@ -83,8 +84,28 @@ Page({
             })
         })
     },
+    isDel(e){
+        if(e.detail.value){
+            let psf = this.data.listinfo.postage
+            let newlist = Object.assign({},this.data.listinfo,{postage:peisongfei})
+            this.setData({
+                listinfo:newlist,
+                quan:psf
+            })
+        peisongfei = psf
+        is_integral_postage = 1
+        }else{
+            let newlist = Object.assign({},this.data.listinfo,{postage:peisongfei})
+            this.setData({
+                listinfo:newlist,
+                quan:0
+            })
+            peisongfei = 0
+            is_integral_postage = 0
+        }
+    },
     __getData (cb) {
-        let that = this
+        /*let that = this
         let token = wx.getStorageSync('token')
         wx.request({
             url:app.globalData.url+'api/voucher/1',
@@ -101,10 +122,12 @@ Page({
             }
             cb(info)
          }
-        })
+        })*/
+        cb(this.data.coupons);
     },
-    __getCount () {
-        let that = this
+    __getCount (cps) {
+
+        /*let that = this
         let token = wx.getStorageSync('token')
         wx.request({
             url:app.globalData.url+'api/voucher/1',
@@ -119,9 +142,7 @@ Page({
             let count = 0
             for(var i in info){
                 info[i].hasdate = util.string2date(info[i].end_time)
-                if(util.isExpire(info[i].end_time)){
-                    
-                }else{
+                if(!util.isExpire(info[i].end_time) && info[i].type != 5){
                     if(i<=5){
                         count++
                     }
@@ -132,10 +153,14 @@ Page({
             })
             
          }
+        })*/
+        this.setData({
+            count:cps.length>6 ? 6:cps.length,
+            coupons:cps
         })
     },
     onLoad:function(options){
-        this.__getCount()
+        
         chuan = options.data
         attr = options.addr_id
         coupon = options.coupon_id
@@ -153,6 +178,15 @@ Page({
             header:{"Authorization": "Bearer "+token},
             data:{data:chuan,addr_id:attr,coupon_id:coupon},
             success: function(res) {
+                if(res.data.data.is_integral == 1){
+                    that.setData({
+                        is_integral:true
+                    })
+                }
+                if(res.data.data.is_integral == -1){
+                    that.__getCount(res.data.data.coupons)
+                }
+                is_integral_postage = res.data.data.is_integral_postage
                 that.setData({
                     listinfo:res.data.data
                 })
@@ -190,28 +224,43 @@ Page({
                 cou = JSON.stringify(that.data.coupons[that.data.coupons_index])
                 form = {data:chuan,addr:attr,coupon_id:that.data.coupons[that.data.coupons_index].id}
             }
+            let is_itgl = that.data.is_integral ? 1 : -1;
+            let mydata = Object.assign({},form,{is_integral:is_itgl,is_integral_postage:is_integral_postage})
             wx.request({
                 url:that.data.HOST+'api/create_order',
                 header:{"Authorization": "Bearer "+token},
-                data:form,
+                data:mydata,
                 method:'POST',
                 success: function(res) {
-                    let orderid = res.data.data.order_id
-                    if(res.data.success){
-                        that.setData({
-                            way:true
-                        })
-                        wx.redirectTo({
-                            url: '../paydan/paydan?id='+orderid+'&coupon='+cou
-                        })
-                    }else{
+                    let data = res.data.data
+                    if(data.is_integral == 1 && data.postage == 0){
                         wx.showToast({
-                            title: res.data.msg,
+                            title: '支付成功',
                             icon: 'success',
-                            duration: 1500
+                            duration: 1500,
                         })
+                        setTimeout(function(){
+                            wx.redirectTo({
+                                    url: '../order/order?type=0'
+                                })
+                        },1000)
+                    }else{
+                        let orderid = res.data.data.order_id
+                        if(res.data.success){
+                            that.setData({
+                                way:true
+                            })
+                            wx.redirectTo({
+                                url: '../paydan/paydan?id='+orderid+'&coupon='+cou+'&is_integral='+is_itgl
+                            })
+                        }else{
+                            wx.showToast({
+                                title: res.data.msg,
+                                icon: 'success',
+                                duration: 1500
+                            })
+                        }
                     }
-                    
                 }
             })
         }
@@ -255,12 +304,12 @@ Page({
         })
     },
     //对呀 走了 
-    onUnload:function(){
+    /*onUnload:function(){
         if(!this.data.way){
             wx.switchTab({
                 url: '../index/index'
             })
         }
-    }
+    }*/
 
 })

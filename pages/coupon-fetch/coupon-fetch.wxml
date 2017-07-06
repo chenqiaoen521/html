@@ -3,7 +3,7 @@
 	<view class="left">
 		<view class="up">
 			¥<text class="price">{{item.money}}</text>
-			<view wx:if="{{item.condition != undefined}}" class="price-desc">满{{item.condition}}元使用</view>
+			<view wx:if="{{item.condition != undefined}}" class="price-desc">使用条件:{{item.category_name}}</view>
 			<view wx:if="{{item.store_name}}" class="price-desc">门店~{{item.store_name}}</view>
 		</view>
 		<view class="down">{{item.cate_name}}</view>

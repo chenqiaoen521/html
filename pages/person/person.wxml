@@ -2,7 +2,7 @@
     <view class="wrapper">
         <image src="{{userInfo.avatarUrl}}" bindtap="toSetting"></image>
         <view class="middle">
-            <text class="name" bindtap="toSetting">{{userInfo.nickName }}</text>
+            <view class="name" bindtap="toSetting">{{userInfo.nickName }}</view>
             <view class="member" bindtap="toSetting">会员号:{{member}}</view>
         </view>
         <view class="right">
@@ -51,13 +51,22 @@
     <text class="title">我的收藏</text>
     <view class="right" bindtap="toFav"><image class="icon jiantou" src="../img/center_13.png"></image></view>
 </navigator>
+<navigator url="../coupon-tuancome/coupon-tuancome" class="item">
+    <image class="icon xing" src="../img/group.png"></image>
+    <text class="title">团购游泳券</text>
+    <view class="right"><image class="icon jiantou" src="../img/center_13.png"></image></view>
+</navigator>
 
-<navigator url="../coupon/coupon" class="item">
+<navigator url="../coupon/coupon" class="item" style="margin-bottom:8px;">
     <image class="icon xing" src="../img/center_092.png"></image>
     <text class="title">我的优惠券</text>
     <view class="right"><image class="icon jiantou" src="../img/center_13.png"></image></view>
 </navigator>
-
+<navigator url="../score-shop/score-shop" class="item">
+    <image class="icon jifen" src="../img/jifen.png"></image>
+    <text class="title">积分商城</text>
+    <view class="right"><image class="icon jiantou" src="../img/center_13.png"></image></view>
+</navigator>
 <navigator url="../address/address" class="item" style="margin-bottom:8px;">
     <image class="icon local" src="../img/center_10.png"></image>
     <text class="title">收货地址</text>

@@ -6,7 +6,8 @@ view{background: #fff;}
     padding: 20px 15px;
     background-color: #ff6698; 
     border-bottom:1rpx solid #e5e5e5;
-    box-shadow: 0 0 2rpx #bbb;
+    -webkit-box-shadow: 0 0 2rpx #bbb;
+            box-shadow: 0 0 2rpx #bbb;
     margin-bottom: 1rpx;
 }
 .center .wrapper{
@@ -28,22 +29,23 @@ view{background: #fff;}
     margin:8px 0 14px 20px;
 
 }
-.center .middle .name{font-size: 15px;line-height: 24px;}
+.center .middle .name{font-size: 15px;line-height: 24px;background-color: #ff6698; width:200rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .center .middle .member{font-size: 12px;background-color: #ff6698; }
 .center .right {float: right;margin:12px 0; background-color: #ff6698;  }
 .center .right .text{ background-color: #ff6698;}
-.center .right .icon{display: block; margin:0 auto;width: 16px;height: 16px;background: url('../img/icon.png') no-repeat;background-size: 100%;}
+.center .right .icon{display: block; margin:0 auto;width: 16px;height: 16px;background-size: 100%;}
 .center .right .box{font-size: 12px; display: inline-block;line-height: 22px;background-color: #ff6698; }
 .center .box:first-child{margin-right: 10px;}
 .item {height: 42px;line-height: 42px;border-bottom:1rpx solid #e5e5e5;}
 .item .icon{width: 20px;height: 20px;float:left;margin:11px;}
 .item .ding{margin-top:12px;}
 .item .local{width: 18px;}
+.item .jifen{width: 21px;}
 .item .jiantou{display: block;width: 7px;height: 13px; float: right;margin-top: 14px;}
 .item .title{font-size: 15px;color: #1a1a1a;vertical-align: bottom;}
 .item .right{float: right;font-size: 15px;color: #818181;height: 41px;}
-.state{width: 100%; display: -ms-flexbox; display: flex;font-size: 14px;color:#4c4c4c;border-bottom:1rpx solid #e5e5e5;padding:10px 0;margin-bottom: 8px;}
-.state .state-item{-ms-flex:1;flex:1;text-align: center;width: 100%;}
+.state{width: 100%; display: -ms-flexbox; display: -webkit-box; display: flex;font-size: 14px;color:#4c4c4c;border-bottom:1rpx solid #e5e5e5;padding:10px 0;margin-bottom: 8px;}
+.state .state-item{-ms-flex:1;-webkit-box-flex:1;flex:1;text-align: center;width: 100%;}
 .state .state-icon{margin:0 auto;width:25px;height:21px;}
 .state .state-item .count{position: absolute;display: inline-block;margin:-6px 0 0 -8px; font-size: 8px;text-align: center; background: #f72a3b; border-radius: 50%;color: #fff;width:13px;height:13px;line-height:13px;
 }

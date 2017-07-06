@@ -77,7 +77,7 @@
             <view class="sin" data-alpha-beta="{{j.id}}" bindtap="goxq">
                 <view class="sg">
                     <view class="simg"><image class="prolist" src="{{HOST}}{{j.thumb}}"></image></view>
-                    <view class="sname">{{j.goods_name}}</view>
+                    <view class="sname">{{j.name}}</view>
                     <view class="sprice">
                         <view class="smoney">¥ <view class="inline big">{{j.sellprice}}</view></view>
                         <view class="snum">月销量：<view class="inline color">{{j.sell_num}}</view></view>
@@ -98,6 +98,9 @@
         <image src="../img/indexpng_60.png"></image>
         <view class="duan">100%正品</view>
         <view class="miao">所有产品保证正品</view>
+    </view>
+    <view>
+      <button open-type="contact">asddasdasd</button>
     </view>
     <view class="pone bg3">
         <image src="../img/indexpng_57.png"></image>
