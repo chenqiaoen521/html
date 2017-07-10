@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/authentication/authentication",
+    "pages/coupon-new/coupon-new",
     "pages/coupon/coupon",
     "pages/person/person",
     "pages/coupon-tuancome/coupon-tuancome",

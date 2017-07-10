@@ -1,0 +1,68 @@
+<scroll-view class="big">
+	<view style="margin:20rpx 0;">
+		<view class="box">
+		<view class="left">
+			宝宝姓名
+		</view>
+		<view class="right">
+			<input class="input" type="text" placeholder-class="pit" placeholder="请输入宝宝名字"  />
+		</view>
+	</view>
+	<view class="box">
+		<view class="left">
+			出生期
+		</view>
+		<view class="right">
+			<view class="choose">请选择</view>
+			<image class="jt"src="../img/xiaoxi_03.png"></image>
+		</view>
+	</view>
+	</view>
+	
+	<view style="margin:20rpx 0">
+		<view class="box">
+		<view class="left">
+			开始时间
+		</view>
+		<view class="right">
+			<view class="choose">请选择</view>
+			<image class="jt"src="../img/xiaoxi_03.png"></image>
+		</view>
+	</view>
+	<view class="box">
+		<view class="left">
+			结束时间
+		</view>
+		<view class="right">
+			<view class="choose">请选择</view>
+			<image class="jt"src="../img/xiaoxi_03.png"></image>
+		</view>
+	</view>
+	</view>
+	<view class="images">
+		<view class="item">
+			<image class="close" src="../img/xxx.png"></image>
+		</view>
+		<view class="item">
+			<image class="close" src="../img/xxx.png"></image>
+		</view>
+		<view class="item">
+			<image class="close" src="../img/xxx.png"></image>
+		</view>
+		<view class="item none" bindtap="upload">
+			<view class="plus" >
+				<image src="../img/plus.png" class="img"></image>
+				<view class="upload">点击上传图片</view>
+			</view>
+		</view>
+	</view>
+	<view class="desc">
+		<text class="title">认证成功后：</text>
+		<view class="txt">
+			1. 可到附近门店领取精美礼品一份     2. 游泳卡一旦售出不作退换
+		</view>
+	</view>
+	<button class="submit"
+	hover-class="hs"	
+	>确认</button>
+</scroll-view>

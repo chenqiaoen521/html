@@ -1,0 +1,117 @@
+<scroll-view>
+	<view class="container">
+		<view class="left">
+			<image class="coupon-groud" src="../img/coupon_01.png"/>
+			<view class="txt">
+				<view class="txt-box">
+					<view class="desc">
+						<text class="cs">300元/10次</text>
+						<text class="choose">选择规格</text>
+						<image class="icon" src="../img/rl.png"></image>
+					</view>
+					<view class="limit">
+						无时间限制
+					</view>
+				</view>
+
+			</view>
+		</view>
+		<view class="right" bindtap="goto">
+			<view class="purchase" style="color:#4acdbf">点击</view>
+			<view class="purchase" style="color:#4acdbf">购买</view>
+			<image class="pull" src="../img/lan.png"></image>
+		</view>
+	</view>
+	<view class="container">
+		<view class="left">
+			<image class="coupon-groud" src="../img/coupon_02.png"/>
+			<view class="txt">
+				<view class="txt-box">
+					<view class="desc">
+						<text class="cs">300元/10次</text>
+						<text class="choose"></text>
+						<image class="icon" src="../img/rl.png"></image>
+					</view>
+					<view class="limit">
+						无时间限制
+					</view>
+				</view>
+
+			</view>
+		</view>
+		<view class="right" bindtap="goto">
+			<view class="purchase" style="color:#cd9149">点击</view>
+			<view class="purchase" style="color:#cd9149">购买</view>
+			<image class="pull" src="../img/lan_01.png"></image>
+		</view>
+	</view>
+	<view class="container">
+		<view class="left">
+			<image class="coupon-groud" src="../img/coupon_03.png"/>
+			<view class="txt">
+				<view class="txt-box">
+					<view class="desc">
+						<text class="cs">300元/10次</text>
+						<text class="choose"></text>
+						<image class="icon" src="../img/rl.png"></image>
+					</view>
+					<view class="limit">
+						无时间限制
+					</view>
+				</view>
+
+			</view>
+		</view>
+		<view class="right" bindtap="goto">
+			<view class="purchase" style="color:#5a49dd">点击</view>
+			<view class="purchase" style="color:#5a49dd">购买</view>
+			<image class="pull" src="../img/lan_02.png"></image>
+		</view>
+	</view>
+	<view class="container">
+		<view class="left">
+			<image class="coupon-groud" src="../img/coupon_04.png"/>
+			<view class="txt">
+				<view class="txt-box">
+					<view class="desc">
+						<text class="cs">300元/10次</text>
+						<text class="choose"></text>
+						<image class="icon" src="../img/rl.png"></image>
+					</view>
+					<view class="limit">
+						无时间限制
+					</view>
+				</view>
+
+			</view>
+		</view>
+		<view class="right" bindtap="goto">
+			<view class="purchase" style="color:#9847e8">点击</view>
+			<view class="purchase" style="color:#9847e8">购买</view>
+			<image class="pull" src="../img/lan_03.png"></image>
+		</view>
+	</view>
+	<view class="container">
+		<view class="left">
+			<image class="coupon-groud" src="../img/coupon_05.png"/>
+			<view class="txt">
+				<view class="txt-box">
+					<view class="desc">
+						<text class="cs">300元/10次</text>
+						<text class="choose"></text>
+						<image class="icon" src="../img/rl.png"></image>
+					</view>
+					<view class="limit">
+						无时间限制
+					</view>
+				</view>
+
+			</view>
+		</view>
+		<view class="right" bindtap="goto">
+			<view class="purchase" style="color:#dc4990">点击</view>
+			<view class="purchase" style="color:#dc4990">购买</view>
+			<image class="pull" src="../img/lan_04.png"></image>
+		</view>
+	</view>
+</scroll-view>

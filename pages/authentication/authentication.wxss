@@ -1,0 +1,22 @@
+page{width:100%;height:100%; background: #f2f3f5;}
+.big{}
+.box{width:100%;background-color: #fff;padding:0 20rpx;border-bottom:2rpx solid #f2f3f5;  display: -webkit-box;-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;  display: -ms-flexbox;display: flex;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;}
+.box .left{line-height: 110rpx;color:#333333;font-size: 36rpx;}
+.box .right {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;   -webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row;}
+.box .right .input{line-height: 110rpx;height:110rpx;text-align: right;}
+.box .right .choose{color:#cccccc;font-size: 32rpx;}
+.box .right .pit{line-height: 110rpx;height:110rpx;color:#cccccc;font-size: 32rpx;}
+.box .right .jt{display:block;width:16rpx;height:27rpx;margin-left: 20rpx;}
+.images{display: -webkit-box;display: -ms-flexbox;display: flex;  background-color: #fff;padding:16rpx;padding-top:30rpx;width:100%;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-direction: row;flex-direction: row; -ms-flex-pack: distribute; -webkit-box-pack: start; justify-content: flex-start;-ms-flex-wrap: wrap;flex-wrap: wrap;}
+.images .item {position: relative;  -webkit-box-flex: 0;-ms-flex: 0 0 29%;flex: 0 0 29%;margin:0 12rpx;margin-bottom: 20rpx; background-color: #ca9e35; width:29%;padding-top:29%;}
+.images .item.none{background-color: transparent;}
+.images .item .close{position: absolute;right: -18rpx;top: -18rpx;display: block;width: 36rpx;height: 36rpx;}
+.images .item .plus{position:absolute;top:0;left: 0;right: 0;bottom: 0;border:2rpx solid #e6e6e6;}
+.images .item .plus .img { width: 90rpx;height: 90rpx; display: block; margin:20rpx auto 0;}
+.images .item .plus .upload { color:#cccccc;font-size: 30rpx;text-align: center; margin:20rpx auto 0;}
+
+.desc {color:#ff6698;padding:20rpx;margin-bottom: 60rpx;}
+.desc .title {font-size: 36rpx;font-weight: 500;line-height: 60rpx;}
+.desc .txt{font-size: 30rpx;line-height: 45rpx;}
+.submit{background-color:#ff6698; color:#fff;}
+.hs{background-color:#ca9e35;color:#ff6698;}
